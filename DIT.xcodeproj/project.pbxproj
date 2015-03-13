@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		180C60C61AB366F4009B967E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60C51AB366F4009B967E /* AppDelegate.swift */; };
-		180C60C81AB366F4009B967E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60C71AB366F4009B967E /* ViewController.swift */; };
+		180C60C81AB366F4009B967E /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60C71AB366F4009B967E /* HomeScreenViewController.swift */; };
 		180C60CB1AB366F4009B967E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C60C91AB366F4009B967E /* Main.storyboard */; };
 		180C60CD1AB366F4009B967E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180C60CC1AB366F4009B967E /* Images.xcassets */; };
 		180C60D01AB366F4009B967E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180C60CE1AB366F4009B967E /* LaunchScreen.xib */; };
 		180C60DC1AB366F4009B967E /* DITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60DB1AB366F4009B967E /* DITTests.swift */; };
+		180C60E61AB3675F009B967E /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60E51AB3675F009B967E /* BackgroundView.swift */; };
+		180C60EC1AB368D1009B967E /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60EB1AB368D1009B967E /* Screen.swift */; };
+		180C60EE1AB36AD6009B967E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60ED1AB36AD6009B967E /* Location.swift */; };
+		180C60F11AB36D51009B967E /* ParrallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F01AB36D51009B967E /* ParrallaxView.swift */; };
+		180C60F41AB38704009B967E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F31AB38704009B967E /* ContentView.swift */; };
+		180C60F71AB387A2009B967E /* ContentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F61AB387A2009B967E /* ContentIcon.swift */; };
+		180C60F91AB387D5009B967E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F81AB387D5009B967E /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +36,20 @@
 		180C60C01AB366F4009B967E /* DIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180C60C41AB366F4009B967E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C60C51AB366F4009B967E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		180C60C71AB366F4009B967E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		180C60C71AB366F4009B967E /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeScreenViewController.swift; path = GUI/HomeScreenViewController.swift; sourceTree = "<group>"; };
 		180C60CA1AB366F4009B967E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		180C60CC1AB366F4009B967E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		180C60CF1AB366F4009B967E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		180C60D51AB366F4009B967E /* DITTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DITTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180C60DA1AB366F4009B967E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C60DB1AB366F4009B967E /* DITTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DITTests.swift; sourceTree = "<group>"; };
+		180C60E51AB3675F009B967E /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = GUI/BackgroundView/BackgroundView.swift; sourceTree = "<group>"; };
+		180C60EB1AB368D1009B967E /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Screen.swift; path = GUI/Screen.swift; sourceTree = "<group>"; };
+		180C60ED1AB36AD6009B967E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Location/Location.swift; sourceTree = "<group>"; };
+		180C60F01AB36D51009B967E /* ParrallaxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParrallaxView.swift; path = GUI/ParrallaxView/ParrallaxView.swift; sourceTree = "<group>"; };
+		180C60F31AB38704009B967E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = GUI/ContentView/ContentView.swift; sourceTree = "<group>"; };
+		180C60F61AB387A2009B967E /* ContentIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentIcon.swift; path = GUI/ContentView/ContentIcon.swift; sourceTree = "<group>"; };
+		180C60F81AB387D5009B967E /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Font.swift; path = GUI/Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				180C60C51AB366F4009B967E /* AppDelegate.swift */,
-				180C60C71AB366F4009B967E /* ViewController.swift */,
+				180C60EF1AB36AE3009B967E /* Location */,
+				180C60EA1AB367E0009B967E /* GUI */,
 				180C60C91AB366F4009B967E /* Main.storyboard */,
 				180C60CC1AB366F4009B967E /* Images.xcassets */,
 				180C60CE1AB366F4009B967E /* LaunchScreen.xib */,
@@ -110,6 +125,52 @@
 				180C60DA1AB366F4009B967E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		180C60E71AB36764009B967E /* BackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				180C60E51AB3675F009B967E /* BackgroundView.swift */,
+			);
+			name = BackgroundView;
+			sourceTree = "<group>";
+		};
+		180C60EA1AB367E0009B967E /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				180C60C71AB366F4009B967E /* HomeScreenViewController.swift */,
+				180C60EB1AB368D1009B967E /* Screen.swift */,
+				180C60F81AB387D5009B967E /* Font.swift */,
+				180C60F51AB38777009B967E /* ContentView */,
+				180C60F21AB36D56009B967E /* ParrallaxView */,
+				180C60E71AB36764009B967E /* BackgroundView */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		180C60EF1AB36AE3009B967E /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				180C60ED1AB36AD6009B967E /* Location.swift */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		180C60F21AB36D56009B967E /* ParrallaxView */ = {
+			isa = PBXGroup;
+			children = (
+				180C60F01AB36D51009B967E /* ParrallaxView.swift */,
+			);
+			name = ParrallaxView;
+			sourceTree = "<group>";
+		};
+		180C60F51AB38777009B967E /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				180C60F31AB38704009B967E /* ContentView.swift */,
+				180C60F61AB387A2009B967E /* ContentIcon.swift */,
+			);
+			name = ContentView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180C60C81AB366F4009B967E /* ViewController.swift in Sources */,
+				180C60F71AB387A2009B967E /* ContentIcon.swift in Sources */,
+				180C60E61AB3675F009B967E /* BackgroundView.swift in Sources */,
+				180C60F11AB36D51009B967E /* ParrallaxView.swift in Sources */,
+				180C60F41AB38704009B967E /* ContentView.swift in Sources */,
+				180C60C81AB366F4009B967E /* HomeScreenViewController.swift in Sources */,
+				180C60F91AB387D5009B967E /* Font.swift in Sources */,
+				180C60EE1AB36AD6009B967E /* Location.swift in Sources */,
 				180C60C61AB366F4009B967E /* AppDelegate.swift in Sources */,
+				180C60EC1AB368D1009B967E /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DIT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -349,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DIT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -407,6 +477,7 @@
 				180C60E11AB366F4009B967E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		180C60E21AB366F4009B967E /* Build configuration list for PBXNativeTarget "DITTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +486,7 @@
 				180C60E41AB366F4009B967E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
