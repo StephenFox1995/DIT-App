@@ -28,6 +28,6 @@ class Location {
     
     // Returns an enumeration value associated with
     class func getCurrentCampus() -> Campus {
-        return Campus.AungierStreet
+        return Campus.GrangeGorman
     }
 }

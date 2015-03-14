@@ -18,7 +18,7 @@ class ParrallaxView: UIView {
     
     
     // Collection of all campus image names,
-    private var campusImageNames: [String] = ["KevinStreet", "AungierStreet", "BoltonStreet", "GrangeGorman", "CathalBrughaStreet"]
+    private var campusImageNames: [String] = ["KevinStreet", "AungierStreet", "BoltonStreet", "Grangegorman", "CathalBrughaStreet"]
     
     // Image associated with the parallax view
     private var image: UIImage?
