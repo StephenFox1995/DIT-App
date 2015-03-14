@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>044E5DB9-2FFF-40B1-BD6A-9A0D86BF6CA7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DIT</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0D0D2B9431DCE65A56D342C22466174C85D22718</key>
+		<string>https://github.com/StephenFox1995/DIT-App</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DIT.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0D0D2B9431DCE65A56D342C22466174C85D22718</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/StephenFox1995/DIT-App</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0D0D2B9431DCE65A56D342C22466174C85D22718</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0D0D2B9431DCE65A56D342C22466174C85D22718</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DIT</string>
+		</dict>
+	</array>
+</dict>
+</plist>

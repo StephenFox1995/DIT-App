@@ -10,19 +10,25 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     
-    var parallaxView: ParrallaxView = ParrallaxView()
+    var backgroundView: BackgroundView = BackgroundView()
     
-    var blueFilterImageView: UIImageView?
-
+    var xib: NSArray = NSBundle.mainBundle().loadNibNamed("ContentView", owner: nil, options: nil)
+    
+    // This view is the view that displays all the icons
+    var contentView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Change the status bar to white
+        // Change the status bar to white as to make the app pretty
         self.setNeedsStatusBarAppearanceUpdate()
         
-        // Initialize the blue filter overlay
-        blueFilterImageView = UIImageView(frame: CGRectMake(0, 0, Screen.width, Screen.height))
-        blueFilterImageView?.image = UIImage(named: "BlueFilter")
+        contentView = (xib[0] as UIView)
+        contentView?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        // Add background view
+        self.view.addSubview(backgroundView)
+        
+        // Add content view
+        self.view.addSubview(contentView!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,15 +38,7 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        // Call update() to update the parrallax view
-        // incase the users location has changed
-        parallaxView.update()
-        
-        self.view.addSubview(parallaxView)
-        
-        // Add this after parrallax effect so it is layered
-        // above it
-        self.view.addSubview(blueFilterImageView!)
+       
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

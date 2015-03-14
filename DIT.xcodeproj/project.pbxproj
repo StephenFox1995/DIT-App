@@ -17,9 +17,8 @@
 		180C60EC1AB368D1009B967E /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60EB1AB368D1009B967E /* Screen.swift */; };
 		180C60EE1AB36AD6009B967E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60ED1AB36AD6009B967E /* Location.swift */; };
 		180C60F11AB36D51009B967E /* ParrallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F01AB36D51009B967E /* ParrallaxView.swift */; };
-		180C60F41AB38704009B967E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F31AB38704009B967E /* ContentView.swift */; };
-		180C60F71AB387A2009B967E /* ContentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F61AB387A2009B967E /* ContentIcon.swift */; };
 		180C60F91AB387D5009B967E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C60F81AB387D5009B967E /* Font.swift */; };
+		180C60FB1AB3969A009B967E /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180C60FA1AB3969A009B967E /* ContentView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +46,8 @@
 		180C60EB1AB368D1009B967E /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Screen.swift; path = GUI/Screen.swift; sourceTree = "<group>"; };
 		180C60ED1AB36AD6009B967E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Location/Location.swift; sourceTree = "<group>"; };
 		180C60F01AB36D51009B967E /* ParrallaxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParrallaxView.swift; path = GUI/ParrallaxView/ParrallaxView.swift; sourceTree = "<group>"; };
-		180C60F31AB38704009B967E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = GUI/ContentView/ContentView.swift; sourceTree = "<group>"; };
-		180C60F61AB387A2009B967E /* ContentIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentIcon.swift; path = GUI/ContentView/ContentIcon.swift; sourceTree = "<group>"; };
 		180C60F81AB387D5009B967E /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Font.swift; path = GUI/Font.swift; sourceTree = "<group>"; };
+		180C60FA1AB3969A009B967E /* ContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentView.xib; path = GUI/ContentView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +93,7 @@
 				180C60EF1AB36AE3009B967E /* Location */,
 				180C60EA1AB367E0009B967E /* GUI */,
 				180C60C91AB366F4009B967E /* Main.storyboard */,
+				180C60FA1AB3969A009B967E /* ContentView.xib */,
 				180C60CC1AB366F4009B967E /* Images.xcassets */,
 				180C60CE1AB366F4009B967E /* LaunchScreen.xib */,
 				180C60C31AB366F4009B967E /* Supporting Files */,
@@ -141,9 +140,8 @@
 				180C60C71AB366F4009B967E /* HomeScreenViewController.swift */,
 				180C60EB1AB368D1009B967E /* Screen.swift */,
 				180C60F81AB387D5009B967E /* Font.swift */,
-				180C60F51AB38777009B967E /* ContentView */,
-				180C60F21AB36D56009B967E /* ParrallaxView */,
 				180C60E71AB36764009B967E /* BackgroundView */,
+				180C60F21AB36D56009B967E /* ParrallaxView */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -162,15 +160,6 @@
 				180C60F01AB36D51009B967E /* ParrallaxView.swift */,
 			);
 			name = ParrallaxView;
-			sourceTree = "<group>";
-		};
-		180C60F51AB38777009B967E /* ContentView */ = {
-			isa = PBXGroup;
-			children = (
-				180C60F31AB38704009B967E /* ContentView.swift */,
-				180C60F61AB387A2009B967E /* ContentIcon.swift */,
-			);
-			name = ContentView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180C60FB1AB3969A009B967E /* ContentView.xib in Resources */,
 				180C60CB1AB366F4009B967E /* Main.storyboard in Resources */,
 				180C60D01AB366F4009B967E /* LaunchScreen.xib in Resources */,
 				180C60CD1AB366F4009B967E /* Images.xcassets in Resources */,
@@ -273,10 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180C60F71AB387A2009B967E /* ContentIcon.swift in Sources */,
 				180C60E61AB3675F009B967E /* BackgroundView.swift in Sources */,
 				180C60F11AB36D51009B967E /* ParrallaxView.swift in Sources */,
-				180C60F41AB38704009B967E /* ContentView.swift in Sources */,
 				180C60C81AB366F4009B967E /* HomeScreenViewController.swift in Sources */,
 				180C60F91AB387D5009B967E /* Font.swift in Sources */,
 				180C60EE1AB36AD6009B967E /* Location.swift in Sources */,
