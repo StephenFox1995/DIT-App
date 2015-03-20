@@ -27,6 +27,7 @@ class GenericViewController: UIViewController {
         self.setNeedsStatusBarAppearanceUpdate()
         
         self.view.addSubview(backgroundView)
+        
     }
 
     

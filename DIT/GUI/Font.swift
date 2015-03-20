@@ -40,7 +40,6 @@ class Font {
         
         // As we don't currently support any other fonts, return the font regardless
         return fontToReturn!
-        
     }
     
     
@@ -53,7 +52,7 @@ class Font {
     private func getAvenirFont(fontStyle: FontStyle, size: CGFloat) -> UIFont {
         
         // List of avenir next font this app supports
-        var avenirFonts:[String] = ["Avenir Next Light", "Avenir Next Regular", "Avenir Next Bold"]
+        var avenirFonts:[String] = ["Avenir Next Light", "Avenir Next", "Avenir Next Bold"]
         
         switch (fontStyle) {
         

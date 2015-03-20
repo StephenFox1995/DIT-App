@@ -8,17 +8,23 @@
 
 import UIKit
 
-class HomeScreenViewController: GenericViewController{
+class HomeScreenViewController: GenericViewController, ContentViewDelegate{
     
     
-
     var contentView: ContentView = ContentView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // To recieve updates on which buttons was pressed
+        self.contentView.delegate = self
+        
+        
+        // Add the Content View to receive all the Icons
         self.view.addSubview(contentView)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,5 +35,13 @@ class HomeScreenViewController: GenericViewController{
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
     }
+    
+    
+    // MARK: Content view delegate implementation
+    func viewControllerToPresent(viewController: String) {
+        println("BABABA")
+    }
+    
+    
 }
 

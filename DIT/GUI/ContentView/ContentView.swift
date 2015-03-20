@@ -10,52 +10,69 @@ import UIKit
 
 
 // Any object that uses this protocol will be informed
-// which button has been pressed and therefore
-// which viewController to present.
+// which button has been pressed. 
 protocol ContentViewDelegate {
     
-    // @param viewController - String corresponding to the View Controller
-    // to present.
+    // @param viewController - String corresponding to the View Controller to present.
     func viewControllerToPresent(viewController: String)
 }
 
 
 
-// Content View is the view where all the home screens icons
-// are displayed from and added to.
+// ContentView contains all the home screens icons
 class ContentView: UIView {
-    
-    
-    let xib: NSArray = NSBundle.mainBundle().loadNibNamed("ContentView", owner: nil, options: nil)
     
     var delegate: ContentViewDelegate?
     
-    override init() {
-        super.init(frame: CGRect())
-      
-        
-        let view = (xib[0] as UIView)
-        
-        // Change colour to transparent as its blue
-        // interface builder.
-        view.backgroundColor = UIColor.blackColor()
-        
-        self.addSubview(view)
-    }
+    // Collection of all icons for this view
+    var icons: [ContentViewIcon] = []
+    
+    var iconAmount: Int = 6
+    
 
+    
+    override init() {
+        super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
+        
+        self.createButtons()
+    }
+    
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
     }
     
-
+    
+    private func createButtons() {
+        
+        // Create all the buttons and add them to the array of icons
+        icons.append(ContentViewIcon(iconType: .Maps, origin: CGPoint(x: 40, y: 90)))
+        icons.append(ContentViewIcon(iconType: .Courses, origin: CGPoint(x: 235, y: 90)))
+        icons.append(ContentViewIcon(iconType: .News, origin: CGPoint(x: 40, y: 250)))
+        icons.append(ContentViewIcon(iconType: .Library, origin: CGPoint(x: 235, y: 250)))
+        icons.append(ContentViewIcon(iconType: .Contact, origin: CGPoint(x: 40, y: 435)))
+        icons.append(ContentViewIcon(iconType: .Timetable, origin: CGPoint(x: 235, y: 435)))
+        
+        // Add buttons to the view
+        self.addButtonsToView()
+    }
     
     
-    // MARK: Implement protocol methods here to tell the
+    
+    
+    private func addButtonsToView() {
+        for(var i: Int = 0; i < iconAmount; i++) {
+            self.addSubview(icons[i])
+        }
+    }
+    
+    
+    
+    
+    // MARK: Implement protocol methods here to notify the
     // any conforming class which View Controller to present
     @IBAction func displayMapsView(sender: AnyObject) {
         println("Maps")
-        self.delegate?.viewControllerToPresent("Maps")
     }
     
     
