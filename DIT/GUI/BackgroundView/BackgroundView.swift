@@ -9,8 +9,10 @@
 import UIKit
 
 
-// This class defines the view i.e the background to be used for 
-// all ViewController's view property
+// Background view is the background that is used across the app.
+// 
+// It contains an image of the campus (with a parrallax effect)
+// and a blue overlay.
 class BackgroundView: UIView {
     
  
@@ -23,8 +25,9 @@ class BackgroundView: UIView {
     override init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         
+        
         // Initialize the blue filter overlay
-        blueFilterImageView = UIImageView(frame: CGRectMake(0, 0, Screen.width, Screen.height))
+        blueFilterImageView = UIImageView(frame: CGRectMake(0, 0, Screen.width + 10, Screen.height + 10))
         blueFilterImageView?.image = UIImage(named: "BlueFilter")
         
         self.addSubview(parrallaxView)
@@ -36,13 +39,16 @@ class BackgroundView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     // Call this method to update any member of this view
     func update() {
         
-        // Call update() to update the parrallax view
+        // Call to update the parrallax view
         // incase the users location has changed
-        parrallaxView.update()
+        parrallaxView.checkIfLocationNeedsUpdating()
 
     }
+    
+    
 
 }

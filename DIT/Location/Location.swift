@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import MapKit
+import CoreLocation
 
 enum Campus: Int {
     case KevinStreet
@@ -15,19 +16,56 @@ enum Campus: Int {
     case BoltonStreet
     case GrangeGorman
     case CathalBrughaStreet
-    
-    // If the user isn't at a campus
-    case None
+    case None // If the user isn't at a campus
 }
 
 
+
 // Use to access the users current location
-class Location {
+class Location: NSObject, CLLocationManagerDelegate {
 
     var currentCampus: Campus?
+    private var locationManager: CLLocationManager?
     
-    // Returns an enumeration value associated with
-    class func getCurrentCampus() -> Campus {
+    override init() {
+        super.init()
+        // Set up location manager
+
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
+        locationManager?.delegate = self
+        
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.requestAlwaysAuthorization()
+    }
+    
+    
+    
+    
+    // Returns an enumeration value associated with the 
+    // current campus the user is situated at.
+    func getCurrentCampus() -> Campus {
+
+
+        
+        if(CLLocationManager.locationServicesEnabled()) {
+            
+            locationManager = CLLocationManager()
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+
+            
+        }
+        
         return Campus.GrangeGorman
     }
+    
+    
+    
+    
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var locationCoordinates: CLLocationCoordinate2D = manager.location.coordinate
+        println(locationCoordinates)
+    }
+    
 }

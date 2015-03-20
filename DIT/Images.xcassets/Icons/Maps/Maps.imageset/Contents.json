@@ -7,12 +7,11 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Maps@x2.png"
+      "filename" : "Maps@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "Maps@x3.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

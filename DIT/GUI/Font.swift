@@ -21,7 +21,8 @@ enum AppFont: Int {
 }
 
 // Use this class to access custom app fonts, used across the app.
-// @Supports Avenir Next
+// 
+// @supports Avenir Next
 class Font {
     
     
@@ -44,6 +45,11 @@ class Font {
     
     
     // Method allows us to access all the current suported Avenir Next Fonts
+    // 
+    // @param fontStyle: The style of font to be used i.e. Light, Regular etc
+    // @param size: The size of the font
+    //
+    // @return Avenir Font
     private func getAvenirFont(fontStyle: FontStyle, size: CGFloat) -> UIFont {
         
         // List of avenir next font this app supports
@@ -62,6 +68,7 @@ class Font {
             
         default:
             return UIFont(name: avenirFonts[1], size: 20.00)!
+        
         }
     }
 

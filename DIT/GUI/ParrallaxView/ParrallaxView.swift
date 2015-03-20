@@ -30,17 +30,19 @@ class ParrallaxView: UIView {
     private var location: Location?
     
     
-    var parrallaxEffectRelativeValue: CGFloat = 15
+    var parrallaxEffectRelativeValue: CGFloat = 100
     
     
     
-    // - Constructs a view which is full screen size
-    // - Sets up a parrallax effect
+    // Constructs a view which is full screen size
+    // Sets up a parrallax effect
     override init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         
+        self.location = Location()
+        
         // Get the current campus the user is situated at
-        currentCampus = Location.getCurrentCampus()
+        currentCampus = location!.getCurrentCampus()
         
         // Add campus image
         self.addImageToView(forLocation: currentCampus!)
@@ -62,10 +64,10 @@ class ParrallaxView: UIView {
     
     // Call this function to update the parrallax view, incase the
     // user has moved from one campus to another, or has left a campus
-    func update() {
+    func checkIfLocationNeedsUpdating() {
         
         // Get the current campus the user is situated at
-        currentCampus = Location.getCurrentCampus()
+        currentCampus = location!.getCurrentCampus()
         
         self.addImageToView(forLocation: currentCampus!)
 
@@ -79,7 +81,7 @@ class ParrallaxView: UIView {
         // Set the image origins outside of the screen so the images
         // edges don't appear on the screen when parrallax effect is 
         // in action.
-        // Set the width and height slightly bigger to also accommodate
+        // Set the width and height slightly bigger to accommodate
         // the parrallax effect
         var campusImageView: UIImageView = UIImageView(frame: CGRectMake(
             -parrallaxEffectRelativeValue,
@@ -140,33 +142,10 @@ class ParrallaxView: UIView {
     
     // Creates parrallax effect for this view
     private func setUpParrallaxEffect() {
+        var parrallaxEffect: ParrallaxEffect = ParrallaxEffect()
         
-        // Setup tilt effect on horizontal axis
-        var verticalMotionEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
-        
-        // Constrain effect
-        verticalMotionEffect.minimumRelativeValue = -parrallaxEffectRelativeValue
-        verticalMotionEffect.maximumRelativeValue = parrallaxEffectRelativeValue
-        
-        // Set the horizontal effect
-        var horizontalMotionEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
-        
-        // Contrain effect
-        horizontalMotionEffect.minimumRelativeValue = -parrallaxEffectRelativeValue
-        horizontalMotionEffect.maximumRelativeValue = parrallaxEffectRelativeValue
-        
-        
-        // Create a group so they can be used together
-        var motionEffectGroup: UIMotionEffectGroup = UIMotionEffectGroup()
-        motionEffectGroup.motionEffects = [verticalMotionEffect, horizontalMotionEffect]
-        
-        
-        // Add motion effect group to the view
-        self.addMotionEffect(motionEffectGroup)
+        parrallaxEffect.addEffect(self,
+            relativeValue: self.parrallaxEffectRelativeValue,
+            type: ParrallaxType.Both)
     }
-    
-    
-    
-    
-        
 }

@@ -8,13 +8,13 @@
 
 import UIKit
 
-// Read only information for the screen properties
+// Information for the screen properties
 class Screen: UIView {
     
     
     
     
-    // Return the width of the screen.
+    // Return the width of the screen (read-only)
     internal class var width: CGFloat {
         get { return UIScreen.mainScreen().bounds.size.width }
     }
@@ -22,7 +22,7 @@ class Screen: UIView {
     
     
     
-    // Return the height of the screen.
+    // Return the height of the screen. (read-only)
     internal class var height: CGFloat {
         get { return UIScreen.mainScreen().bounds.size.height }
     }
@@ -30,7 +30,7 @@ class Screen: UIView {
     
     
     
-    // Return half screen width
+    // Return half screen width. (read-only)
     internal class var halfWidth: CGFloat {
         get { return (UIScreen.mainScreen().bounds.size.width / 2 )}
     }
@@ -38,7 +38,7 @@ class Screen: UIView {
     
     
     
-    // Return half screen height 
+    // Return half screen height. (read-only)
     internal class var halfHeight: CGFloat {
         get { return (UIScreen.mainScreen().bounds.size.height / 2) }
     }

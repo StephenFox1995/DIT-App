@@ -7,12 +7,11 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Media@x2.png"
+      "filename" : "News@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "Media@x3.png"
+      "scale" : "3x"
     }
   ],
   "info" : {
