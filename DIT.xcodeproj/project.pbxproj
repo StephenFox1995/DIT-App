@@ -22,6 +22,7 @@
 		180F83371ABDE9BF00037DDE /* GenericNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F83361ABDE9BF00037DDE /* GenericNavigationBar.swift */; };
 		180F833B1ABE0BF100037DDE /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F833A1ABE0BF100037DDE /* NewsArticleView.swift */; };
 		180F833E1ABE1E5400037DDE /* GenericTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F833D1ABE1E5400037DDE /* GenericTextView.swift */; };
+		180F83411ABE2CD200037DDE /* ExpandableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F83401ABE2CD200037DDE /* ExpandableLabel.swift */; };
 		182C72571AB48FC5002CD338 /* ParrallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182C72561AB48FC5002CD338 /* ParrallaxEffect.swift */; };
 		187EA9881AB5D1B900C64488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EA9871AB5D1B900C64488 /* ContentView.swift */; };
 		187EA98D1AB5E8CD00C64488 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EA98C1AB5E8CD00C64488 /* GenericViewController.swift */; };
@@ -64,6 +65,7 @@
 		180F83361ABDE9BF00037DDE /* GenericNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericNavigationBar.swift; path = GUI/GenericNavigationBar.swift; sourceTree = "<group>"; };
 		180F833A1ABE0BF100037DDE /* NewsArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsArticleView.swift; path = DIT/GUI/NewsArticleView/NewsArticleView.swift; sourceTree = "<group>"; };
 		180F833D1ABE1E5400037DDE /* GenericTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTextView.swift; path = GUI/GenericTextView.swift; sourceTree = "<group>"; };
+		180F83401ABE2CD200037DDE /* ExpandableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableLabel.swift; path = GUI/ExpandableLabel.swift; sourceTree = "<group>"; };
 		182C72561AB48FC5002CD338 /* ParrallaxEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParrallaxEffect.swift; path = GUI/ParrallaxView/ParrallaxEffect.swift; sourceTree = "<group>"; };
 		187EA9871AB5D1B900C64488 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = GUI/ContentView/ContentView.swift; sourceTree = "<group>"; };
 		187EA98C1AB5E8CD00C64488 /* GenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericViewController.swift; path = GUI/GenericViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				180F833F1ABE1F4800037DDE /* Generic Class Collection */,
 				180C60C71AB366F4009B967E /* HomeScreenViewController.swift */,
 				188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */,
+				180F83401ABE2CD200037DDE /* ExpandableLabel.swift */,
 				18B3B2981AB64543006FD38A /* Colour.swift */,
 				180C60EB1AB368D1009B967E /* Screen.swift */,
 				180C60F81AB387D5009B967E /* Font.swift */,
@@ -332,6 +335,7 @@
 				180C60E61AB3675F009B967E /* BackgroundView.swift in Sources */,
 				180F833B1ABE0BF100037DDE /* NewsArticleView.swift in Sources */,
 				18BD41EE1ABCC05F00464759 /* ContentIcon.swift in Sources */,
+				180F83411ABE2CD200037DDE /* ExpandableLabel.swift in Sources */,
 				180C60F11AB36D51009B967E /* ParrallaxView.swift in Sources */,
 				18BD41F01ABCEDBB00464759 /* GenericCollectionViewCell.swift in Sources */,
 				180C60C81AB366F4009B967E /* HomeScreenViewController.swift in Sources */,

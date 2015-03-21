@@ -8,12 +8,17 @@
 
 import UIKit
 
+
 class NewsArticleView: UIView {
     
     
     private var visualEffectView: UIVisualEffectView?
     private var imageForBackground: UIImageView?
-    private var textView: UITextView?
+    private var textView: GenericTextView?
+    private var title: ExpandableLabel?
+    private var font: Font = Font()
+    
+   
     
     override init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
@@ -21,21 +26,30 @@ class NewsArticleView: UIView {
         
         
         // Setup the blue effect for this view
-        visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
         visualEffectView?.frame = CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height)
         
-        imageForBackground = UIImageView(frame: CGRectMake(0, 0, Screen.width, Screen.height))
-        imageForBackground?.image = UIImage(named: "newsTest2")
         
-        textView = UITextView(frame: CGRect(x: 0, y: 20, width: Screen.width, height: Screen.height))
-        textView!.text = "Lorem ipsum, hello my name is Johny J. I would Ket on the side with lots of bass in the side of my ear"
-        textView!.textColor = UIColor.whiteColor()
-        textView!.backgroundColor = UIColor.clearColor()
-
-
+        imageForBackground = UIImageView(frame: CGRectMake(0, 0, Screen.width, Screen.height))
+        imageForBackground?.image = UIImage(named: "NewsTest3")
+        
+        textView = GenericTextView(frame: CGRect(x: 0, y: 70, width: Screen.width, height: Screen.height))
+        
+        title = ExpandableLabel(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 70), amountToExpand: 20)
+        title?.numberOfLines = 0
+        title?.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
+        title?.adjustsFontSizeToFitWidth = true
+        title?.text = "Five Dublin Institutions to showcase over 60 New Research Technologies and R&D Capabilities in DIT - Innovation Showcase 2015"
+        title?.textColor = UIColor.blackColor()
+        
+        title?.font = font.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
+        
+        
         self.addSubview(imageForBackground!)
         self.addSubview(visualEffectView!)
+        self.addSubview(title!)
         self.addSubview(textView!)
+
         
     }
     
@@ -67,7 +81,7 @@ class NewsArticleView: UIView {
             target.view.addSubview(self)
             
             // Turn off user interaction for the target view
-            target.view.userInteractionEnabled = false
+            target.view.userInteractionEnabled = true
         }
         else {
             fatalError("Cannot present NewsArticleView.")
