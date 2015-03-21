@@ -56,7 +56,7 @@ class Location: NSObject, CLLocationManagerDelegate {
             
         }
         
-        return Campus.GrangeGorman
+        return Campus.KevinStreet
     }
     
     
