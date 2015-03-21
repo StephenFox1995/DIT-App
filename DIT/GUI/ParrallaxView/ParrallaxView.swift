@@ -30,7 +30,7 @@ class ParrallaxView: UIView {
     private var location: Location?
     
     
-    var parrallaxEffectRelativeValue: CGFloat = 100
+    var parrallaxEffectRelativeValue: CGFloat = 15
     
     
     
@@ -70,7 +70,6 @@ class ParrallaxView: UIView {
         currentCampus = location!.getCurrentCampus()
         
         self.addImageToView(forLocation: currentCampus!)
-
     }
     
     

@@ -13,19 +13,26 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
     
     var contentView: ContentView = ContentView()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // So nothing is displayed under the navgation bar
+        self.navigationController?.navigationBar.translucent = false
         
-        // To recieve updates on which buttons was pressed
+        // To recieve updates on which buttons was pressed on the content view
         self.contentView.delegate = self
         
         
-        // Add the Content View to receive all the Icons
+        // Add the ContentView for all icons
         self.view.addSubview(contentView)
-        
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        // Hide navigation bar
+        self.navigationController?.navigationBarHidden = true
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,9 +44,26 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
     }
     
     
-    // MARK: Content view delegate implementation
+    
+    
+    // MARK: ContentView delegate implementation
+    // Notifies us when user presses button on ContentView
     func viewControllerToPresent(viewController: String) {
-        println("BABABA")
+        
+        // Decide which view Controller to display
+        
+        switch(viewController) {
+            
+        case "MapCollectionViewController":
+            var mapView = MapCollectionViewController()
+            self.navigationController?.pushViewController(mapView, animated: true)
+            break
+            
+        default:
+            break
+            
+        }
+        
     }
     
     

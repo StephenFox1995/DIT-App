@@ -27,7 +27,7 @@ enum ContentIconType {
 // This class allows ContentView to add icons i.e.
 // An object that has a UIButton & UILabel
 //
-class ContentViewIcon: UIView {
+class ContentIcon: UIView {
     
     var iconButton: UIButton = UIButton()
     var iconTitle: UILabel = UILabel()
@@ -127,9 +127,11 @@ class ContentViewIcon: UIView {
     
     
     
-    
-    func addAction(action: Selector, target: AnyObject?) {
-        
+    // Add action for the button when clicked.
+    // @param action - Method to be called
+    // @param target - The object to where the methos will be called
+    func action(action: Selector, target: AnyObject?) {
+        self.iconButton.addTarget(target, action: action, forControlEvents: .TouchUpInside)
     }
     
     

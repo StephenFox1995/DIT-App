@@ -21,7 +21,7 @@ class BackgroundView: UIView {
     
     var blueFilterImageView: UIImageView?
     
-    // Constructor
+
     override init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         

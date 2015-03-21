@@ -9,31 +9,54 @@
 import UIKit
 
 
-class MapCollectionViewController: GenericCollectionViewController {
-
+// Shows collection of all campuses of DIT
+class MapCollectionViewController: GenericViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    let identifier = "cell"
+    var collectionView: GenericCollectionView = GenericCollectionView()
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        self.navigationController?.navigationBarHidden = false
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: identifier)
 
+        self.view.addSubview(collectionView)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    
+    
+    
+    
+    
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
-
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+    
+    
+    
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
     }
-
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
-
+    
+    
+    
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as UICollectionViewCell
+        cell.contentView.backgroundColor = UIColor.whiteColor()
         return cell
     }
-
-
-
 }
