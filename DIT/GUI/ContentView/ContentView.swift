@@ -78,6 +78,8 @@ class ContentView: UIView {
     }
     
     
+    // Add all the actions for the button property on the
+    // icons
     private func addIconActions() {
         
         // List of actions for each Icon button to carry out
@@ -110,6 +112,7 @@ class ContentView: UIView {
     
     // Display News View
     func displayNewsView() {
+        self.delegate?.viewControllerToPresent("NewsArticleViewController")
     }
     
     

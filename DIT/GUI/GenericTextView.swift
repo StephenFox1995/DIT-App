@@ -22,7 +22,7 @@ class GenericTextView: UITextView {
         self.backgroundColor = UIColor.clearColor()
         self.scrollEnabled = true
         self.editable = false
-        self.text = "Lorem Ipsum up the bum bum, fhidhfc iejie ieie cduie icjeic cnjodhf eofhieo heowrf hofhewo fewohohfgowhfohowfohf  hfoehfow fowh ohf ow f hofh ohfohfohfo hohfowf hofhowhf oh ofh owow hfow ow ofhow  hwo hfow hfowh o hwo fow hfowhfow wohfwohfeowhfuoewhfo wh howh eow fiewofhieow hfiewo hefiwoh hfruo oreghrugrfrur uffu freuohfwrhf uiwrffvurhf ruhfu  uf heru r hfu grhie hfroe;o wf owrh iofw hjvrwj foewn wh of3 wre vvbjksnvosheho ew fvhrwui hwi fea firwg fw wk frw hfwe w hfw heow heow hw wh fuewh fuewh fuwerio hfuwo fu ewif uiewh fiewhfiehfiewb fuiewh fiew hfuiewh fuiewh fuiewh ufiweh few buvweb iwbriewbvirehvorwafuberwio;afhruewo; HRUWQfeoruwqa;fehuwqFERUW FERUWIOAHEORUWA H FGUERFHEU H"
+        
     }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -32,9 +32,9 @@ class GenericTextView: UITextView {
     
     // Sets the text for this view
     // @param text - The text for this view to display
-    //func setText(text: String) {
-      //  self.text = text
-    //}
+    func text(text: String) {
+        self.text = text
+    }
 
     
     required init(coder aDecoder: NSCoder) {

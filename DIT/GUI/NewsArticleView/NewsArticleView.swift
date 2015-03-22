@@ -8,7 +8,10 @@
 
 import UIKit
 
-
+// This class presents a NewsArticleView, which will display
+// - News Title
+// - News Article
+// - News Image (Used as the background for the story)
 class NewsArticleView: UIView {
     
     
@@ -24,33 +27,66 @@ class NewsArticleView: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         self.backgroundColor = UIColor.clearColor()
         
-        
+        // Add a visual effect view to diplay the article on.
         visualEffectView = VisualEffectView(frame: frame, withBlur: true, withVibrancy: false)
-        visualEffectView?.addBackgroundImage("NewsTest3")
         
-        textView = GenericTextView(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
+        // Set up the textview for the article
+        textView = GenericTextView(frame: CGRect(x: 0, y: 70, width: Screen.width, height: Screen.height))
+
         
-//        title = ExpandableLabel(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 70), amountToExpand: 20)
-//        title?.numberOfLines = 0
-//        title?.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
-//        title?.adjustsFontSizeToFitWidth = true
-//        title?.text = "Five Dublin Institutions to showcase over 60 New Research Technologies and R&D Capabilities in DIT - Innovation Showcase 2015"
-//        title?.textColor = UIColor.blackColor()
+        // Set up the title for the article
+        title = ExpandableLabel(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 70), amountToExpand: 20)
+        title?.numberOfLines = 0
+        title?.adjustsFontSizeToFitWidth = true
+        title?.textColor = UIColor.whiteColor()
+        title?.font = font.getFont(.AvenirNext, fontStyle: .Bold, size: 30)
         
-//        title?.font = font.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
         
         
         self.addSubview(visualEffectView!)
         self.visualEffectView?.addContentToBlurView(textView!)
-//        self.addSubview(title!)
-
-
-        
+        self.addSubview(title!)
     }
+    
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
+    //MARK: Set attrributes for the news story
+    
+    // Sets the article for the news story
+    // @param article
+    func setArticleText(article: String) {
+        self.textView?.text(article)
+    }
+    
+    
+    
+    
+    // Sets the title for the article
+    // @param title
+    func setArticleTitle(title: String) {
+        self.title?.text = title
+    }
+    
+    
+    
+    
+    // Sets the background image for the article story
+    // @param name - Name of the image to set
+    func setArticleImage(name: String) {
+        self.visualEffectView?.addBackgroundImage(name)
+    }
+    
+    
+    
+    
+    
+    // MARK: Present NewsArticleView
+    
     
     // Present this view
     // @param onView - View which his responsible to presenting
@@ -100,9 +136,4 @@ class NewsArticleView: UIView {
         }
     
     }
-    
-    
-
-
-
 }

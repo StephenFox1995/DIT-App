@@ -16,6 +16,8 @@ import UIKit
 // and a blue filter overlay.
 class GenericViewController: UIViewController {
     
+    
+    // Background view to provide the blue overlay and parrallax image
     var backgroundView: BackgroundView = BackgroundView()
     
 

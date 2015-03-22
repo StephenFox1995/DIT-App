@@ -30,7 +30,7 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
     
     override func viewWillAppear(animated: Bool) {
         // Hide navigation bar
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -55,8 +55,13 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
         switch(viewController) {
             
         case "MapCollectionViewController":
-            var mapView = MapCollectionViewController()
-            self.navigationController?.pushViewController(mapView, animated: true)
+            var mapCollectionViewController = MapCollectionViewController()
+            self.navigationController?.pushViewController(mapCollectionViewController, animated: true)
+            break
+            
+        case "NewsArticleViewController":
+            var newsArticleViewController = NewsArticleCollectionViewController()
+            self.navigationController?.pushViewController(newsArticleViewController, animated: true)
             break
             
         default:
@@ -65,7 +70,5 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
         }
         
     }
-    
-    
 }
 

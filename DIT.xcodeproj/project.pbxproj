@@ -25,6 +25,7 @@
 		180F83411ABE2CD200037DDE /* ExpandableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F83401ABE2CD200037DDE /* ExpandableLabel.swift */; };
 		182C72571AB48FC5002CD338 /* ParrallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182C72561AB48FC5002CD338 /* ParrallaxEffect.swift */; };
 		1849A5AB1ABF1CF300529D98 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849A5AA1ABF1CF300529D98 /* VisualEffectView.swift */; };
+		1849A5AE1ABF41E900529D98 /* NewsArticleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849A5AD1ABF41E900529D98 /* NewsArticleCollectionViewController.swift */; };
 		187EA9881AB5D1B900C64488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EA9871AB5D1B900C64488 /* ContentView.swift */; };
 		187EA98D1AB5E8CD00C64488 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EA98C1AB5E8CD00C64488 /* GenericViewController.swift */; };
 		188B00451AB9BF0A00A1C2AC /* MapCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */; };
@@ -69,6 +70,7 @@
 		180F83401ABE2CD200037DDE /* ExpandableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableLabel.swift; path = GUI/ExpandableLabel.swift; sourceTree = "<group>"; };
 		182C72561AB48FC5002CD338 /* ParrallaxEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParrallaxEffect.swift; path = GUI/ParrallaxView/ParrallaxEffect.swift; sourceTree = "<group>"; };
 		1849A5AA1ABF1CF300529D98 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualEffectView.swift; path = DIT/GUI/VisualEffectView/VisualEffectView.swift; sourceTree = "<group>"; };
+		1849A5AD1ABF41E900529D98 /* NewsArticleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsArticleCollectionViewController.swift; path = DIT/GUI/NewsArticleView/NewsArticleCollectionViewController.swift; sourceTree = "<group>"; };
 		187EA9871AB5D1B900C64488 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = GUI/ContentView/ContentView.swift; sourceTree = "<group>"; };
 		187EA98C1AB5E8CD00C64488 /* GenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericViewController.swift; path = GUI/GenericViewController.swift; sourceTree = "<group>"; };
 		188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCollectionViewController.swift; path = GUI/MapCollectionViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				180F833A1ABE0BF100037DDE /* NewsArticleView.swift */,
+				1849A5AD1ABF41E900529D98 /* NewsArticleCollectionViewController.swift */,
 			);
 			name = NewsArticleView;
 			path = ..;
@@ -353,6 +356,7 @@
 				18BD41F01ABCEDBB00464759 /* GenericCollectionViewCell.swift in Sources */,
 				180C60C81AB366F4009B967E /* HomeScreenViewController.swift in Sources */,
 				188B00451AB9BF0A00A1C2AC /* MapCollectionViewController.swift in Sources */,
+				1849A5AE1ABF41E900529D98 /* NewsArticleCollectionViewController.swift in Sources */,
 				18B3B2991AB64543006FD38A /* Colour.swift in Sources */,
 				180F83371ABDE9BF00037DDE /* GenericNavigationBar.swift in Sources */,
 				180C60F91AB387D5009B967E /* Font.swift in Sources */,
