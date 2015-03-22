@@ -12,7 +12,7 @@ import UIKit
 class NewsArticleView: UIView {
     
     
-    private var visualEffectView: UIVisualEffectView?
+    private var visualEffectView: VisualEffectView?
     private var imageForBackground: UIImageView?
     private var textView: GenericTextView?
     private var title: ExpandableLabel?
@@ -25,30 +25,25 @@ class NewsArticleView: UIView {
         self.backgroundColor = UIColor.clearColor()
         
         
-        // Setup the blue effect for this view
-        visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark))
-        visualEffectView?.frame = CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height)
+        visualEffectView = VisualEffectView(frame: frame, withBlur: true, withVibrancy: false)
+        visualEffectView?.addBackgroundImage("NewsTest3")
+        
+        textView = GenericTextView(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
+        
+//        title = ExpandableLabel(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 70), amountToExpand: 20)
+//        title?.numberOfLines = 0
+//        title?.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
+//        title?.adjustsFontSizeToFitWidth = true
+//        title?.text = "Five Dublin Institutions to showcase over 60 New Research Technologies and R&D Capabilities in DIT - Innovation Showcase 2015"
+//        title?.textColor = UIColor.blackColor()
+        
+//        title?.font = font.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
         
         
-        imageForBackground = UIImageView(frame: CGRectMake(0, 0, Screen.width, Screen.height))
-        imageForBackground?.image = UIImage(named: "NewsTest3")
-        
-        textView = GenericTextView(frame: CGRect(x: 0, y: 70, width: Screen.width, height: Screen.height))
-        
-        title = ExpandableLabel(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 70), amountToExpand: 20)
-        title?.numberOfLines = 0
-        title?.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
-        title?.adjustsFontSizeToFitWidth = true
-        title?.text = "Five Dublin Institutions to showcase over 60 New Research Technologies and R&D Capabilities in DIT - Innovation Showcase 2015"
-        title?.textColor = UIColor.blackColor()
-        
-        title?.font = font.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
-        
-        
-        self.addSubview(imageForBackground!)
         self.addSubview(visualEffectView!)
-        self.addSubview(title!)
-        self.addSubview(textView!)
+        self.visualEffectView?.addContentToBlurView(textView!)
+//        self.addSubview(title!)
+
 
         
     }
@@ -58,7 +53,7 @@ class NewsArticleView: UIView {
     }
     
     // Present this view
-    // @param onView - View whic his responsible to presenting
+    // @param onView - View which his responsible to presenting
     // @prama animated - Animate presentation
     func present(target: AnyObject, animated: Bool) {
         
@@ -94,12 +89,14 @@ class NewsArticleView: UIView {
             // Set this views frame just off the scren so it can animated upwards
             self.frame = CGRect(x: 0, y: Screen.height, width: Screen.height, height: Screen.height)
             
-            
-            UIView.animateWithDuration(0.3,
+            // Animate view into parent view
+            UIView.animateWithDuration(0.5,
                 delay: 0.0,
+                usingSpringWithDamping: 3.5,
+                initialSpringVelocity: 0.2,
                 options: UIViewAnimationOptions.CurveEaseInOut,
-                animations: {self.frame = CGRectMake(0, 0, Screen.width, Screen.height)},
-                completion: nil )
+                animations: {self.frame = CGRectMake(0, 0, Screen.width, Screen.height)} ,
+                completion: nil)
         }
     
     }

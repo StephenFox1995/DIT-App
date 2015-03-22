@@ -17,7 +17,7 @@ class GenericTextView: UITextView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.font = textViewFont.getFont(.AvenirNext, fontStyle: .Light, size: 20)
+        self.font = textViewFont.getFont(.AvenirNext, fontStyle: FontStyle.Regular, size: 20)
         self.textColor = UIColor.whiteColor()
         self.backgroundColor = UIColor.clearColor()
         self.scrollEnabled = true
