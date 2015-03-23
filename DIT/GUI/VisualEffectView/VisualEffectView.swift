@@ -41,7 +41,8 @@ class VisualEffectView: UIView {
             self.addBlurEffect()
             self.addVibrancyEffect()
             
-            // Finally add vibrancy effect view to the content view of the blur effect
+            // Add vibrancy effect view to the content view of the blur effect
+            // as it cannot be on added without a blur effect
             visualBlurEffectView?.contentView.addSubview(visualVibrancyEffectView!)
         }
         // Blur on its own

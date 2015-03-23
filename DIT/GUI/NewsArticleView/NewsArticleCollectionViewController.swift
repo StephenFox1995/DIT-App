@@ -8,11 +8,13 @@
 
 import UIKit
 
+// Class which shows a collection of news stories.
 class NewsArticleCollectionViewController: GenericViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var identifier = "cell"
-    var collectionView: GenericCollectionView = GenericCollectionView()
-    var font: Font = Font()
+    var cell: GenericCollectionViewCell?
+    private var identifier = "cell"
+    private var collectionView: GenericCollectionView = GenericCollectionView()
+    private var font: Font = Font()
     
 
     
@@ -24,11 +26,12 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSFontAttributeName: font.getFont(.AvenirNext, fontStyle: .Regular, size: 20),
             NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBar"), forBarMetrics: .Default)
         self.navigationController?.navigationBar.translucent = false
-        self.navigationItem.title = "News"
+        self.navigationItem.title = "NEWS"
+        
+        // Setup collectionView
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.registerClass(GenericCollectionViewCell.self, forCellWithReuseIdentifier: identifier)
@@ -42,13 +45,13 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 9
     }
     
     
@@ -61,14 +64,27 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as GenericCollectionViewCell
+        cell = (collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as GenericCollectionViewCell)
         
         // Set the attributes of the collection view cell
-        cell.setCell("NewsTest", title: "Aungier Street")
-        cell.addAction(Selector("presentNewsArticleView"), target: self)
+        cell!.setCellImage("NewsTest3")
+        cell!.setCellTitle("Aungier Street")
         
-        return cell
+        cell!.addAction(Selector("presentNewsArticleView"), target: self)
+        
+        return cell!
     }
+    
+    
+    
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var yOffset = ( (self.collectionView.contentOffset.y - self.cell!.frame.origin.y) / (cell!.imageView!.image!.size.height) * cell!.offsetSpeed)
+        
+        //cell!.initiateParrallaxEffect(CGPointMake(0, yOffset))
+        
+    }
+    
     
     
     

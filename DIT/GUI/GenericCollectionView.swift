@@ -19,12 +19,12 @@ class GenericCollectionView: UICollectionView {
     
     override init() {
         var flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: Screen.width, height: 200)
+        flowLayout.itemSize = CGSize(width: Screen.width, height: 180)
         flowLayout.scrollDirection = .Vertical
         
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height), collectionViewLayout: flowLayout)
         
-        self.backgroundColor = Colour.transparentColour
+        self.backgroundColor = UIColor.clearColor()
         
     }
     

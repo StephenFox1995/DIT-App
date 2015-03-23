@@ -34,24 +34,23 @@ class ParrallaxEffect: NSObject {
     // @param type: The type of parrallax effect to be set for the target
     func addEffect(target: UIView, relativeValue: CGFloat, type: ParrallaxType) {
         
+        // Create motion effect array so its not nil
+        self.motionEffectGroup.motionEffects = []
+        
         // Set the min & max tilt values for the parrallax effect
         parrallaxEffectRelativeValue = relativeValue
         
         
-        // Set up the appropriate parallax effect type
-        switch (type) {
-        case .Both:
+        if(type == .Both) {
             setHorizontalAndVerticalParrallaxEffect()
-            break
-            
-        case .Horizontal:
-            setHorizontalEffect()
-            break
-            
-        case .Vertical:
-            setVerticalEffect()
-            break
         }
+        else if (type == .Horizontal) {
+            setHorizontalEffect()
+        }
+        else if (type == .Vertical) {
+            setVerticalEffect()
+        }
+        
         
         // Add motion effect group to the view (target)
         target.addMotionEffect(self.motionEffectGroup)
@@ -106,7 +105,7 @@ class ParrallaxEffect: NSObject {
     
     // @param effect: Append a new motion effect to an array of effects
     private func addMotion(effect: UIInterpolatingMotionEffect){
-        self.motionEffectGroup.motionEffects = []
+        
         self.motionEffectGroup.motionEffects.append(effect)
     }
     
