@@ -7,15 +7,7 @@
 //
 
 import UIKit
-// Course Name
-// Course Code
-// Course Description
-// Course Department - e.g School of Computing
-// Email for course
-// Location
-// Number of places
-// Qualtication 
-// Link to dit
+
 
 class CourseViewController: GenericViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -66,8 +58,8 @@ class CourseViewController: GenericViewController, UITableViewDelegate, UITableV
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var contentView: GenericContentView = GenericContentView()
-        contentView.present(self, animated: true)
+        var courseInformationView: CourseInformationView = CourseInformationView()
+        courseInformationView.present(self, animated: true)
     }
     
     

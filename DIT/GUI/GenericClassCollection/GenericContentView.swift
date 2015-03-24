@@ -15,12 +15,12 @@ protocol GenericContentViewDelegate {
 
 // Provides a view which has
 // - background image/ with blur
-//
 class GenericContentView: UIView, GenericContentViewDelegate {
 
     var visualEffectView: VisualEffectView?
     var imageForBackground: UIImageView?
     var font: Font = Font()
+    
     
     var delegate: GenericContentViewDelegate?
     
@@ -74,10 +74,10 @@ class GenericContentView: UIView, GenericContentViewDelegate {
         //
         // From this app we will only want to present from a
         // UIViewController, thus UIViewController is the
-        // only object we check for in the downcast of
-        // AnyObject
+        // only object we check for in the downcast of AnyObject
+        //
         // Any other object that wants to present this view
-        // will raise an exception
+        // will raise an exception.
         if let target = target as? UIViewController {
             
             target as UIViewController

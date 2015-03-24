@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CourseTableViewCell: UITableViewCell {
     
     class var height: CGFloat { get {return 40.0} }
