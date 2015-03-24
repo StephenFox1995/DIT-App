@@ -30,7 +30,7 @@ class ParrallaxView: UIView {
     private var location: Location?
     
     
-    var parrallaxEffectRelativeValue: CGFloat = 15
+    var parrallaxEffectRelativeValue: CGFloat = 30
     
     
     

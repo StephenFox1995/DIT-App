@@ -21,6 +21,8 @@ class GenericCollectionViewCell: UICollectionViewCell {
     var width: CGFloat?
     var height: CGFloat?
     
+    
+    
     private var yOffset: CGFloat?
     var offsetSpeed: CGFloat = 2.00
 
@@ -34,12 +36,18 @@ class GenericCollectionViewCell: UICollectionViewCell {
     
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 181))
+        super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 190))
 
         
         self.width = self.frame.size.width
         self.height = self.frame.size.height
-        self.contentView.backgroundColor = UIColor.clearColor()
+        
+        // Add the cells content view to a visual effect view
+        var visualEffectView = VisualEffectView(frame: self.frame, withBlur: true, withVibrancy: false, style: .Dark)
+        visualEffectView.addContentToBlurView(self.contentView)
+        
+        self.addSubview(visualEffectView)
+
         
         // Initialise the button
         // The button will be overlaid on the 
@@ -54,18 +62,7 @@ class GenericCollectionViewCell: UICollectionViewCell {
         self.button?.backgroundColor = UIColor.clearColor()
         
         
-        // Init the title
-        self.title = UILabel(frame: CGRect(
-            x: 0,
-            y: height! - 30,
-            width: width!,
-            height: 30))
         
-        self.title?.textColor = UIColor.whiteColor()
-        self.title?.backgroundColor = UIColor.whiteColor()
-        self.title?.font = font.getFont(AppFont.AvenirNext,
-            fontStyle: FontStyle.Regular,
-            size: 20)
     }
     
     
@@ -96,15 +93,22 @@ class GenericCollectionViewCell: UICollectionViewCell {
     // Set the cells title
     // @param title - The title for the cell
     func setCellTitle(title: String) {
+
+        
+        // Init the title positioned inside the visual effect frame
+        self.title = UILabel(frame: CGRectMake(0, self.height! - 40, Screen.width, 40))
+        
+        // Setup the title
+        self.title?.textColor = UIColor.whiteColor()
+        self.title?.font = font.getFont(AppFont.AvenirNext,
+            fontStyle: FontStyle.Regular,
+            size: 20)
+        
         self.title?.text = title
         
-        var visualEffectView = VisualEffectView(frame: self.title!.frame, withBlur: true, withVibrancy: true)
-        visualEffectView.addContentToBlurView(self.title!)
-       
         
-        self.addSubview(visualEffectView)
-        
-        
+        self.contentView.addSubview(self.title!)
+        self.contentView.bringSubviewToFront(self.title!)
     }
     
     
@@ -112,11 +116,13 @@ class GenericCollectionViewCell: UICollectionViewCell {
     
     // @param name - Name of the image
     func setCellImage(name: String) {
-        self.imageView = UIImageView(frame: CGRectMake(0, 0, self.width!, self.height!))
+        self.imageView = UIImageView(frame: CGRectMake(0, 0, self.width!, self.height! - 40))
+        self.imageView?.center.x = self.center.x
         
         // The button will be overlaid to give effect
         // that the image is a button
         self.button = UIButton(frame: CGRectMake(0, 0, self.width!, self.height!))
+
         
         var image = UIImage(named: name)
         self.imageView?.image = image

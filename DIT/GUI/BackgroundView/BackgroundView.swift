@@ -19,6 +19,7 @@ class BackgroundView: UIView {
     // View used for parrallax effect, with image of current campus user is at.
     var parrallaxView: ParrallaxView = ParrallaxView()
     
+    // This is used as the blue overlay
     var blueFilterImageView: UIImageView?
     
 

@@ -53,10 +53,9 @@ class Location: NSObject, CLLocationManagerDelegate {
             locationManager = CLLocationManager()
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
 
-            
         }
         
-        return Campus.KevinStreet
+        return Campus.GrangeGorman
     }
     
     

@@ -12,6 +12,7 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
     
     
     var contentView: ContentView = ContentView()
+    var headerLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +23,19 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
         // To recieve updates on which buttons was pressed on the content view
         self.contentView.delegate = self
         
+        // Set up the header label
+        self.headerLabel = UILabel(frame: CGRectMake(0, 20, Screen.width, 40))
+        self.headerLabel.center.x = self.view.center.x
+        self.headerLabel.textColor = UIColor.whiteColor()
+        self.headerLabel.font = font.getFont(.AvenirNext, fontStyle: .Light, size: 30)
+        self.headerLabel.textAlignment = NSTextAlignment.Center
+        self.headerLabel.text = "Aungier Street"
+        
         
         // Add the ContentView for all icons
         self.view.addSubview(contentView)
+        
+        self.view.addSubview(headerLabel)
     }
     
     
@@ -62,6 +73,11 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
         case "NewsArticleViewController":
             var newsArticleViewController = NewsArticleCollectionViewController()
             self.navigationController?.pushViewController(newsArticleViewController, animated: true)
+            break
+            
+        case "CourseViewController":
+            var courseViewController = CourseViewController()
+            self.navigationController?.pushViewController(courseViewController, animated: true)
             break
             
         default:

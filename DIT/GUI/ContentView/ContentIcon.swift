@@ -74,16 +74,16 @@ class ContentIcon: UIView {
             height: 66)
         
         
+        
         // Setup positon of title frame
         self.iconTitle.frame = CGRect(
             x: 0,
-            y: 80,
+            y: 70,
             width: width!,
-            height: height!)
+            height: 20)
         
         // Set titles attributes
         self.iconTitle.textColor = UIColor.whiteColor()
-        self.iconTitle.textAlignment = .Center
         self.iconTitle.font = font.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
         
         

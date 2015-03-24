@@ -14,7 +14,10 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     var cell: GenericCollectionViewCell?
     private var identifier = "cell"
     private var collectionView: GenericCollectionView = GenericCollectionView()
-    private var font: Font = Font()
+
+    
+    private var images: [String] = ["NewsTest", "NewsTest2", "NewsTest3", "NewsTest4"]
+    private var titles: [String] = ["News News", "More News", "More News News", "More News News News"]
     
 
     
@@ -22,13 +25,6 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
         super.viewDidLoad()
         
         
-        // Setup the navigation bar
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSFontAttributeName: font.getFont(.AvenirNext, fontStyle: .Regular, size: 20),
-            NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBar"), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.translucent = false
         self.navigationItem.title = "NEWS"
         
         // Setup collectionView
@@ -51,7 +47,7 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 4
     }
     
     
@@ -67,8 +63,8 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
         cell = (collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as GenericCollectionViewCell)
         
         // Set the attributes of the collection view cell
-        cell!.setCellImage("NewsTest3")
-        cell!.setCellTitle("Aungier Street")
+        cell!.setCellImage(images[indexPath.row])
+        cell!.setCellTitle(titles[indexPath.row])
         
         cell!.addAction(Selector("presentNewsArticleView"), target: self)
         
@@ -79,7 +75,7 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        var yOffset = ( (self.collectionView.contentOffset.y - self.cell!.frame.origin.y) / (cell!.imageView!.image!.size.height) * cell!.offsetSpeed)
+        //var yOffset = ( (self.collectionView.contentOffset.y - self.cell!.frame.origin.y) / (cell!.imageView!.image!.size.height) * cell!.offsetSpeed)
         
         //cell!.initiateParrallaxEffect(CGPointMake(0, yOffset))
         
@@ -97,7 +93,7 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
         newsArticleView.setArticleTitle("A Terrible Beauty - Echoes of Easter 1916")
         
         // Set the article image
-        newsArticleView.setArticleImage("NewsTest3")
+        newsArticleView.setArticleImage("NewsTest4")
         
         // Set the article text
         newsArticleView.setArticleText("Lorem Ipsum random shite, fhidhfc iejie ieie cduie icjeic cnjodhf eofhieo heowrf hofhewo fewohohfgowhfohowfohf  hfoehfow fowh ohf ow f hofh ohfohfohfo hohfowf hofhowhf oh ofh owow hfow ow ofhow  hwo hfow hfowh o hwo fow hfowhfow wohfwohfeowhfuoewhfo wh howh eow fiewofhieow hfiewo hefiwoh hfruo oreghrugrfrur uffu freuohfwrhf uiwrffvurhf ruhfu  uf heru r hfu grhie hfroe;o wf owrh iofw hjvrwj foewn wh of3 wre vvbjksnvosheho ew fvhrwui hwi fea firwg fw wk frw hfwe w hfw heow heow hw wh fuewh fuewh fuwerio hfuwo fu ewif uiewh fiewhfiehfiewb fuiewh fiew hfuiewh fuiewh fuiewh ufiweh few buvweb iwbriewbvirehvorwafuberwio;afhruewo; HRUWQfeoruwqa;fehuwqFERUW FERUWIOAHEORUWA H FGUERFHEU H")

@@ -41,7 +41,7 @@ class ContentView: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         
         // Create all the buttons for this view
-        self.createButtons()
+        self.createIcons()
     }
     
     
@@ -50,7 +50,7 @@ class ContentView: UIView {
     }
     
     
-    private func createButtons() {
+    private func createIcons() {
         
         // Create all the icons and add them to the array of icons
         icons.append(ContentIcon(iconType: .Maps, origin: CGPoint(x: 40, y: 90)))
@@ -108,6 +108,7 @@ class ContentView: UIView {
     
     // Display Courses
     func displayCoursesView() {
+        self.delegate?.viewControllerToPresent("CourseViewController")
     }
     
     // Display News View

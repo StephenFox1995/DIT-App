@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 // Creates a view with a UIVisualEffect
 //
 // This class contructs a UIView with a UIBlurEffect & UIVibrancyEffect. A vibrancy effect cannot be added on its own, it must have a blur effect in order to work. 
@@ -29,7 +30,7 @@ class VisualEffectView: UIView {
     
     
     
-    init(frame: CGRect, withBlur: Bool, withVibrancy: Bool) {
+    init(frame: CGRect, withBlur: Bool, withVibrancy: Bool, style: UIBlurEffectStyle) {
         super.init(frame: frame)
         
         self.withBlur = withBlur
@@ -38,7 +39,7 @@ class VisualEffectView: UIView {
         
         // Both blur and vibrancy
         if(withBlur & withVibrancy) {
-            self.addBlurEffect()
+            self.addBlurEffect(style)
             self.addVibrancyEffect()
             
             // Add vibrancy effect view to the content view of the blur effect
@@ -47,7 +48,7 @@ class VisualEffectView: UIView {
         }
         // Blur on its own
         else if(withBlur & !withVibrancy) {
-            self.addBlurEffect()
+            self.addBlurEffect(style)
         }
     }
     
@@ -58,10 +59,10 @@ class VisualEffectView: UIView {
     
     
     // Adds a UIVisualEffectView with a UIBlurEffect
-    func addBlurEffect() {
+    func addBlurEffect(style: UIBlurEffectStyle) {
         
         // Construct blur effect
-        self.blurEffect = UIBlurEffect(style: .Dark)
+        self.blurEffect = UIBlurEffect(style: style)
         
         // Add blur effect to a visual effect view
         self.visualBlurEffectView = UIVisualEffectView(effect: blurEffect!)

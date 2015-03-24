@@ -15,23 +15,15 @@ class MapCollectionViewController: GenericViewController, UICollectionViewDelega
     let identifier = "cell"
     var collectionView: GenericCollectionView = GenericCollectionView()
     
-    var font: Font = Font()
     
+    
+    private var campusImages: [String] = ["KevinStreet", "Grangegorman", "AungierStreet", "BoltonStreet"]
+    private var campusNames: [String] = ["Kevin Street", "Grange Gorman", "Aungier Street", "Bolton Street"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Maps"
-        
-        // Setup the navigation bar
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSFontAttributeName: font.getFont(.AvenirNext, fontStyle: .Regular, size: 20),
-            NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBar"), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.translucent = false
-        
+        self.navigationItem.title = "MAPS"
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -52,8 +44,9 @@ class MapCollectionViewController: GenericViewController, UICollectionViewDelega
     
     
     
+    // Return 9 cells as theres no
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     
@@ -68,6 +61,9 @@ class MapCollectionViewController: GenericViewController, UICollectionViewDelega
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as GenericCollectionViewCell
+        
+        cell.setCellImage(campusImages[indexPath.row])
+        cell.setCellTitle(campusNames[indexPath.row])
         return cell
     }
     
