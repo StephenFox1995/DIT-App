@@ -9,14 +9,16 @@
 import UIKit
 
 // Class which shows a collection of news stories.
-class NewsArticleCollectionViewController: GenericViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class NewsArticleCollectionViewController: GenericViewController, GenericContentViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var cell: GenericCollectionViewCell?
     private var identifier = "cell"
     private var collectionView: GenericCollectionView = GenericCollectionView()
+    
+
 
     
-    private var images: [String] = ["NewsTest", "NewsTest2", "NewsTest3", "NewsTest4"]
+    private var images: [String] = ["NewsTest7", "NewsTest6", "NewsTest5", "NewsTest4"]
     private var titles: [String] = ["News News", "More News", "More News News", "More News News News"]
     
 
@@ -24,6 +26,7 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         
         self.navigationItem.title = "NEWS"
         
@@ -43,7 +46,6 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,6 +84,11 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     }
     
     
+    override func contentViewHasAppeared(appeared: Bool) {
+        var rightBarButton = GenericBarButtonItem(title: "Dismiss")
+        self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
     
     
     // MARK: Use this method to send any information to the NewsArticleView
@@ -89,14 +96,21 @@ class NewsArticleCollectionViewController: GenericViewController, UICollectionVi
     func presentNewsArticleView() {
         var newsArticleView: NewsArticleView = NewsArticleView()
         
+        // So we know when the view has appeared
+        newsArticleView.delegate = self
+        
         // Set the article title
         newsArticleView.setArticleTitle("A Terrible Beauty - Echoes of Easter 1916")
         
         // Set the article image
-        newsArticleView.setArticleImage("NewsTest4")
+        newsArticleView.setArticleBackgroundImage("NewsTest7")
+        
+        
+        // Set the new title image
+        newsArticleView.setArticleTitleImage("NewsTest7")
         
         // Set the article text
-        newsArticleView.setArticleText("Lorem Ipsum random shite, fhidhfc iejie ieie cduie icjeic cnjodhf eofhieo heowrf hofhewo fewohohfgowhfohowfohf  hfoehfow fowh ohf ow f hofh ohfohfohfo hohfowf hofhowhf oh ofh owow hfow ow ofhow  hwo hfow hfowh o hwo fow hfowhfow wohfwohfeowhfuoewhfo wh howh eow fiewofhieow hfiewo hefiwoh hfruo oreghrugrfrur uffu freuohfwrhf uiwrffvurhf ruhfu  uf heru r hfu grhie hfroe;o wf owrh iofw hjvrwj foewn wh of3 wre vvbjksnvosheho ew fvhrwui hwi fea firwg fw wk frw hfwe w hfw heow heow hw wh fuewh fuewh fuwerio hfuwo fu ewif uiewh fiewhfiehfiewb fuiewh fiew hfuiewh fuiewh fuiewh ufiweh few buvweb iwbriewbvirehvorwafuberwio;afhruewo; HRUWQfeoruwqa;fehuwqFERUW FERUWIOAHEORUWA H FGUERFHEU H")
+        newsArticleView.setArticleText("LLLLLLLLLLLLLLLLL FERUWIOAHEORUWA H FGUERFHEU H heiuowf eiowhfiowe  hfeh woifewo hfi oehwfhfioehfoehfoewhfoehfoewhfoiewhfioewhfioehfioewhfo")
         newsArticleView.present(self, animated: true)
     }
     

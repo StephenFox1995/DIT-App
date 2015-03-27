@@ -12,44 +12,43 @@ import UIKit
 // - News Title
 // - News Article
 // - News Image (Used as the background for the story)
-class NewsArticleView: GenericContentView {
+class NewsArticleView: GenericContentView, GenericContentViewDelegate {
     
     var articleTextView: GenericTextView!
-    var title: ExpandableLabel!
+    var title: UILabel!
+    var articleTitleImage: UIImageView!
+    var scrollView: GenericScrollView!
     
     override init() {
         super.init()
         
-        self.delegate = self
+        
+        scrollView = GenericScrollView(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.heightWithNavigationBar))
+        self.addSubview(scrollView)
         
         // Set up the textview for the article
-        articleTextView = GenericTextView(frame: CGRect(x: 0, y: 70, width: Screen.width, height: Screen.height))
+        articleTextView = GenericTextView(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.heightWithNavigationBar))
         
         // Set up the title for the article
-        title = ExpandableLabel(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 70), amountToExpand: 20)
+        title = UILabel(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 70))
         title.numberOfLines = 0
         title.adjustsFontSizeToFitWidth = true
         title.textColor = UIColor.whiteColor()
         title.font = font.getFont(.AvenirNext, fontStyle: .Bold, size: 30)
         
-        // Add the title and article to view
-        self.addSubview(title)
-        self.addSubview(articleTextView)
+        //self.addSubview(articleTextView)
+        //self.articleTextView.addSubview(title)
     }
-
+    
+    
+    func contentViewHasAppeared(appeared: Bool) {
+    }
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
-    // When this view has appeared, it is responsible 
-    // for displaying the appropriate button in
-    // the navigation bar to dissmiss the view
-    // when the user has finished.
-    override func contentViewHasAppeared(appeared: Bool) {
-        super.contentViewHasAppeared(true)
-    }
     
     
     //MARK: Set up content for view
@@ -57,7 +56,12 @@ class NewsArticleView: GenericContentView {
     // Sets the textviews text
     // @param article
     func setArticleText(article: String) {
-        self.articleTextView?.text(article)
+        var tempArticle: String = article
+        //self.articleTextView?.addText(tempArticle)
+        
+        self.scrollView.addText(article, fontSize: 25)
+        
+
     }
     
     
@@ -65,15 +69,24 @@ class NewsArticleView: GenericContentView {
     // Sets the title for the view
     // @param title
     func setArticleTitle(title: String) {
-        self.title?.text = title
+        //self.title.text = title
+    }
+    
+    
+    func setArticleTitleImage(name: String) {
+        self.articleTitleImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 321, height: 181))
+        self.articleTitleImage.image = UIImage(named: name)
+        
+        //self.articleTextView.addSubview(articleTitleImage)
+        
     }
     
     
     
     // Sets the background image for the article story
     // @param name - Name of the image to set
-    func setArticleImage(name: String) {
-        super.setImage(name)
+    func setArticleBackgroundImage(name: String) {
+        super.setBackgroundImage(name)
     }
     
     

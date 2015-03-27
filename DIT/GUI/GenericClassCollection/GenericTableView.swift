@@ -16,7 +16,15 @@ class GenericTableView: UITableView {
         
         self.headerViewForSection(0)
         self.backgroundColor = UIColor.clearColor()
+        self.allowsMultipleSelection = false
+        
+        
+        // Remove empty cells
+        var view: UIView = UIView()
+        view.backgroundColor = UIColor.clearColor()
+        self.tableFooterView = view
     }
+    
     
     
 

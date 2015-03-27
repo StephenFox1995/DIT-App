@@ -8,11 +8,16 @@
 
 import UIKit
 
+// Global variable any object can use to accomodate for the navigation
+// bar being in view
+var navigationBarHeight: CGFloat {get {return 64}}
+
 class HomeScreenViewController: GenericViewController, ContentViewDelegate{
     
     
     var contentView: ContentView = ContentView()
     var headerLabel: UILabel = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +34,7 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
         self.headerLabel.textColor = UIColor.whiteColor()
         self.headerLabel.font = font.getFont(.AvenirNext, fontStyle: .Light, size: 30)
         self.headerLabel.textAlignment = NSTextAlignment.Center
-        self.headerLabel.text = "Aungier Street"
+        self.headerLabel.text = "Kevin Street"
         
         
         // Add the ContentView for all icons
@@ -53,6 +58,9 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
     }
+    
+    
+    
     
     
     

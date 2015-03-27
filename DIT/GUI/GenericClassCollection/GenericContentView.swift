@@ -15,7 +15,7 @@ protocol GenericContentViewDelegate {
 
 // Provides a view which has
 // - background image/ with blur
-class GenericContentView: UIView, GenericContentViewDelegate {
+class GenericContentView: UIView {
 
     var visualEffectView: VisualEffectView?
     var imageForBackground: UIImageView?
@@ -26,7 +26,7 @@ class GenericContentView: UIView, GenericContentViewDelegate {
     
     
     override init() {
-        super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
+        super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height - navigationBarHeight))
         
         self.backgroundColor = UIColor.clearColor()
         
@@ -47,16 +47,11 @@ class GenericContentView: UIView, GenericContentViewDelegate {
     // Sets the background image which will be 
     // used as a visual effect
     // @param name - Name of the image to set
-    func setImage(name: String) {
+    func setBackgroundImage(name: String) {
         self.visualEffectView?.addBackgroundImage(name)
     }
     
     
-    
-    // Call this method, to add a dismiss button
-    // in the navigation bar to dismiss this view
-    func contentViewHasAppeared(appeared: Bool) {
-    }
     
     
     // MARK: Present Generic Content View

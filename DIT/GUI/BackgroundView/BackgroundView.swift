@@ -26,7 +26,7 @@ class BackgroundView: UIView {
     override init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         
-        
+
         // Initialize the blue filter overlay
         blueFilterImageView = UIImageView(frame: CGRectMake(0, 0, Screen.width + 10, Screen.height + 10))
         blueFilterImageView?.image = UIImage(named: "BlueFilter")

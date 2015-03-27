@@ -14,12 +14,13 @@ import UIKit
 // Any subclass of this will receive a backgroundView
 // which provides an image of the campus the user is currently at
 // and a blue filter overlay.
-class GenericViewController: UIViewController {
+class GenericViewController: UIViewController, GenericContentViewDelegate {
     
     var font: Font = Font()
     
     // Background view to provide the blue overlay and parrallax image
     var backgroundView: BackgroundView = BackgroundView()
+    
     
 
     override func viewDidLoad() {
@@ -43,7 +44,12 @@ class GenericViewController: UIViewController {
     }
 
     
-    
+    // As its very likely this class or any subclass, will 
+    // present a content view. We want to know when it has appeared so 
+    // a navigation bar item can be added to dismiss, the content view.
+    func contentViewHasAppeared(appeared: Bool) {
+//        self.navigationController?.navigationItem.rightBarButtonItem
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

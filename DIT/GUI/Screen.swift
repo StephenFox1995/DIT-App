@@ -15,7 +15,7 @@ class Screen: UIView {
     
     
     // Return the width of the screen (read-only)
-    internal class var width: CGFloat {
+    class var width: CGFloat {
         get { return UIScreen.mainScreen().bounds.size.width }
     }
     
@@ -23,7 +23,7 @@ class Screen: UIView {
     
     
     // Return the height of the screen. (read-only)
-    internal class var height: CGFloat {
+    class var height: CGFloat {
         get { return UIScreen.mainScreen().bounds.size.height }
     }
     
@@ -31,7 +31,7 @@ class Screen: UIView {
     
     
     // Return half screen width. (read-only)
-    internal class var halfWidth: CGFloat {
+    class var halfWidth: CGFloat {
         get { return (UIScreen.mainScreen().bounds.size.width / 2 )}
     }
     
@@ -39,8 +39,14 @@ class Screen: UIView {
     
     
     // Return half screen height. (read-only)
-    internal class var halfHeight: CGFloat {
+    class var halfHeight: CGFloat {
         get { return (UIScreen.mainScreen().bounds.size.height / 2) }
     }
+    
+    
+    class var heightWithNavigationBar: CGFloat {
+        get { return  (UIScreen.mainScreen().bounds.size.height - 64) }
+    
+        }
 
 }

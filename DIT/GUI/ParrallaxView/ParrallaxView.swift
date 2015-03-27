@@ -90,6 +90,8 @@ class ParrallaxView: UIView {
             ))
         
         
+        
+        
         var campusImage: UIImage?
         
         // Determine what image to display
@@ -128,8 +130,12 @@ class ParrallaxView: UIView {
         }
         
         
+
+        
+        
         // Add campus image to the image view
         campusImageView.image = campusImage!
+        campusImageView.center = self.center
         
         
         // Add campusImageView to view

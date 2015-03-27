@@ -32,7 +32,7 @@ class GenericTextView: UITextView {
     
     // Sets the text for this view
     // @param text - The text for this view to display
-    func text(text: String) {
+    func addText(text: String) {
         self.text = text
     }
 
