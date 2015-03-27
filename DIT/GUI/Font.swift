@@ -25,11 +25,18 @@ enum AppFont: Int {
 // @supports Avenir Next
 class Font {
     
+    var size: CGFloat?
+    var style: FontStyle?
     
+    init(){
+    }
     
     // Get font is the only public method to this class, all the other methods 
     // in this class must be called from getFont() method.
     func getFont(font: AppFont, fontStyle: FontStyle, size: CGFloat) -> UIFont {
+        
+        self.size = size
+        self.style = fontStyle
         
         var fontToReturn: UIFont?
         

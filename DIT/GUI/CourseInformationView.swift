@@ -17,7 +17,7 @@ import UIKit
 // Number of places
 // Qualtication
 // Link to dit
-class CourseInformationView: GenericContentView, GenericContentViewDelegate {
+class CourseInformationView: GenericContentView {
     
     
     var _font: Font = Font()
@@ -38,7 +38,6 @@ class CourseInformationView: GenericContentView, GenericContentViewDelegate {
     override init() {
         super.init()
         
-        self.delegate = self
         
         // Set up content for this view
         // Header Information
@@ -96,10 +95,6 @@ class CourseInformationView: GenericContentView, GenericContentViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    func contentViewHasAppeared(appeared: Bool) {
-        
-    }
     
     
     // MARK: Methods for setting content of view

@@ -12,12 +12,13 @@ import UIKit
 // - News Title
 // - News Article
 // - News Image (Used as the background for the story)
-class NewsArticleView: GenericContentView, GenericContentViewDelegate {
+class NewsArticleView: GenericContentView {
     
     var articleTextView: GenericTextView!
     var title: UILabel!
     var articleTitleImage: UIImageView!
     var scrollView: GenericScrollView!
+
     
     override init() {
         super.init()
@@ -41,9 +42,6 @@ class NewsArticleView: GenericContentView, GenericContentViewDelegate {
     }
     
     
-    func contentViewHasAppeared(appeared: Bool) {
-    }
-    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,34 +49,41 @@ class NewsArticleView: GenericContentView, GenericContentViewDelegate {
     
     
     
+    
+    
     //MARK: Set up content for view
     
-    // Sets the textviews text
-    // @param article
-    func setArticleText(article: String) {
-        var tempArticle: String = article
-        //self.articleTextView?.addText(tempArticle)
+    // Adds text to the scroll view property of this view.
+    // Uses font: Avenir Next, style: Regular, size: 20
+    // @param article - Text to be added for the article
+    func addTextForArticle(article: String) {
+        var articleFont = Font()
+        articleFont.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
         
-        self.scrollView.addText(article, fontSize: 25)
-        
-
+        self.scrollView.addText(article, font: articleFont)
     }
     
     
     
-    // Sets the title for the view
+    // Adds text for a title to the scroll view property of this view.
+    // Uses font: Avenir Next, style: Bold, size: 20
     // @param title
     func setArticleTitle(title: String) {
-        //self.title.text = title
+        var titleFont = Font()
+        titleFont.getFont(.AvenirNext, fontStyle: .Bold, size: 20)
+        
+        self.scrollView.addText(title, font: titleFont)
     }
+    
+    
+    func addImageToArticle(imagename: String) {
+        self.scrollView.addImage(imagename)
+    }
+    
     
     
     func setArticleTitleImage(name: String) {
-        self.articleTitleImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 321, height: 181))
-        self.articleTitleImage.image = UIImage(named: name)
-        
-        //self.articleTextView.addSubview(articleTitleImage)
-        
+        self.scrollView.addImage(name)
     }
     
     

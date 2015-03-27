@@ -15,8 +15,8 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
     private var identifier = "cell"
     private var collectionView: GenericCollectionView = GenericCollectionView()
     
-
-
+    
+    var newsArticleView: NewsArticleView = NewsArticleView()
     
     private var images: [String] = ["NewsTest7", "NewsTest6", "NewsTest5", "NewsTest4"]
     private var titles: [String] = ["News News", "More News", "More News News", "More News News News"]
@@ -38,6 +38,7 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
         self.view.addSubview(collectionView)
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -84,37 +85,52 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
     }
     
     
-    override func contentViewHasAppeared(appeared: Bool) {
-        var g = GenericContentView()
+    
+    // MARK: ContentViewDelegate
+    func contentViewHasAppeared(appeared: Bool) {
         
         var rightBarButton = GenericBarButtonItem(imageName: "NewsTest3")
-        rightBarButton.addAction(Selector("dismiss"), target: g)
+        rightBarButton.addAction(Selector("dismissContentView"), target: self)
         
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
+    
+    
+    func dismissContentView() {
+        self.newsArticleView.dismiss({finished in
+            self.navigationItem.rightBarButtonItem = nil})
+    }
+    
+    
     
     
     
     // MARK: Use this method to send any information to the NewsArticleView
     // i.e title, image, and the article itself.
     func presentNewsArticleView() {
-        var newsArticleView: NewsArticleView = NewsArticleView()
+        
         
         // So we know when the view has appeared
         newsArticleView.delegate = self
         
-        // Set the article title
-        newsArticleView.setArticleTitle("A Terrible Beauty - Echoes of Easter 1916")
-        
         // Set the article image
-        newsArticleView.setArticleBackgroundImage("NewsTest7")
+        newsArticleView.setArticleBackgroundImage("NewsTest2")
+        
+        
+        // Set the article title
+        newsArticleView.setArticleTitle("Sport Report: DIT Claims colleges FAI UMBRO B Cup")
         
         
         // Set the new title image
-        newsArticleView.setArticleTitleImage("NewsTest7")
+        newsArticleView.setArticleTitleImage("NewsTest2")
         
         // Set the article text
-        newsArticleView.setArticleText("LLLLLLLLLLLLLLLLL FERUWIOAHEORUWA H FGUERFHEU H heiuowf eiowhfiowe  hfeh woifewo hfi oehwfhfioehfoehfoewhfoehfoewhfoiecnhjhuhuihuihiuhuihuihuiygyugyugyguygygygyugyugyugyugugyugyugygyugyugyugyfuygyufguydiofhsodjfirfjgiojifohsdovhdsu euofhruhfushf ahudhushguihdhfdihggrshdfghidhdggdhjdghigdfhdfghgrfgdhgrihg igu hgu gr gey88whfioewhfioehfioewhfo")
+        newsArticleView.addTextForArticle("Gavin Fleming’s squad had a tough route to the final, with an open draw for all rounds.  The team faced all away ties which saw them beat Colaiste Ide, IT Blanchardstown, Limerick IT (Tipperary) and Athlone IT on their way to the final where they faced the much fancied IT Carlow. Carlow looked the more impressive side early on and took the lead on 20 minutes but failed to press home their advantage.  They paid the price close to half time when Michael Christian leveled for DIT with a smart finish after Carlow keeper Killian Fitzpatrick saved Darragh Maguire’s initial effort.")
+        
+        newsArticleView.addImageToArticle("b")
+
+        newsArticleView.addTextForArticle("Substitute Mayo Akinola had a couple of late chances in normal time to clinch the win for DIT but he never really tested the keeper. The game was finally settled midway through the second period of extra time when Adam Zayed coolly slotted the ball past the Carlow keeper after good work by Patrick Kavanagh and Jason Coleman. It was a much deserved win for the DIT lads who also had a very strong league campaign and just missed out on progression to the knock out stages on goal difference.  This was just the second time DIT has claimed this title, the first back in 2008. According to DIT’s Soccer Development Officer, John O Carroll, this is also the first piece of silverware for the soccer club since the historic Premier League win in 2013. I would like to congratulate the team on a fantastic achievement and also for the great work done throughout the year by manager Gavin Fleming and his assistant Gary Doyle.")
+        
         newsArticleView.present(self, animated: true)
     }
     

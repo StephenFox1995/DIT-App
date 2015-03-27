@@ -11,7 +11,11 @@ import UIKit
 
 protocol GenericContentViewDelegate {
     func contentViewHasAppeared(appeared: Bool)
+    func dismissContentView()
 }
+
+
+
 
 // Provides a view which has
 // - background image/ with blur
@@ -113,14 +117,19 @@ class GenericContentView: UIView {
     
     
     // Animates the view out of the window/ view it is currently in
-    func dismiss() {
-        println("dd")
-        
+    func dismiss(completion: ((Bool) -> Void)) {
+
         UIView.animateWithDuration(0.5,
             delay: 0.0,
-            options: .CurveEaseInOut,
-            animations: {self.frame = CGRectMake(0, Screen.height, Screen.width, Screen.height)},
-            completion: nil)
+            options: .CurveEaseOut,
+            animations: { self.frame = CGRectMake(0, Screen.height, Screen.width, Screen.height) },
+            completion: { [unowned self] finished in
+                self.removeFromSuperview()
+                completion(true)
+        })
+        
+        
+        
     }
 
 }
