@@ -110,5 +110,17 @@ class GenericContentView: UIView {
         }
         
     }
+    
+    
+    // Animates the view out of the window/ view it is currently in
+    func dismiss() {
+        println("dd")
+        
+        UIView.animateWithDuration(0.5,
+            delay: 0.0,
+            options: .CurveEaseInOut,
+            animations: {self.frame = CGRectMake(0, Screen.height, Screen.width, Screen.height)},
+            completion: nil)
+    }
 
 }

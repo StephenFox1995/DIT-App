@@ -61,6 +61,7 @@ class GenericScrollView: UIScrollView, UIScrollViewDelegate{
         var f: UIFont = UIFont(name: "Avenir Next", size: 25)!
         println("Font size:", f.pointSize)
         var characterCount = forText.characterCount()
+        
         var lines = characterCount / 25
         
         // The height the label should be

@@ -85,7 +85,11 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
     
     
     override func contentViewHasAppeared(appeared: Bool) {
-        var rightBarButton = GenericBarButtonItem(title: "Dismiss")
+        var g = GenericContentView()
+        
+        var rightBarButton = GenericBarButtonItem(imageName: "NewsTest3")
+        rightBarButton.addAction(Selector("dismiss"), target: g)
+        
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
