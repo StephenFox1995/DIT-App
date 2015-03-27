@@ -12,6 +12,8 @@
 	<dict>
 		<key>0D0D2B9431DCE65A56D342C22466174C85D22718</key>
 		<string>https://github.com/StephenFox1995/DIT-App</string>
+		<key>C2E2480B0CA19424FE863AA776AF741B2AEF7AAC</key>
+		<string>https://github.com/collegboi/DIT-Timetable.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>DIT.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>0D0D2B9431DCE65A56D342C22466174C85D22718</key>
 		<string>../..</string>
+		<key>C2E2480B0CA19424FE863AA776AF741B2AEF7AAC</key>
+		<string>../..-Timetable</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/StephenFox1995/DIT-App</string>
@@ -35,6 +39,14 @@
 			<string>0D0D2B9431DCE65A56D342C22466174C85D22718</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DIT</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C2E2480B0CA19424FE863AA776AF741B2AEF7AAC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DIT-Timetable</string>
 		</dict>
 	</array>
 </dict>

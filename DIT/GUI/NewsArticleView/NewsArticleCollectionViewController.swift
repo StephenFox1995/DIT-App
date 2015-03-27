@@ -114,7 +114,7 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
         newsArticleView.setArticleTitleImage("NewsTest7")
         
         // Set the article text
-        newsArticleView.setArticleText("LLLLLLLLLLLLLLLLL FERUWIOAHEORUWA H FGUERFHEU H heiuowf eiowhfiowe  hfeh woifewo hfi oehwfhfioehfoehfoewhfoehfoewhfoiewhfioewhfioehfioewhfo")
+        newsArticleView.setArticleText("LLLLLLLLLLLLLLLLL FERUWIOAHEORUWA H FGUERFHEU H heiuowf eiowhfiowe  hfeh woifewo hfi oehwfhfioehfoehfoewhfoehfoewhfoiecnhjhuhuihuihiuhuihuihuiygyugyugyguygygygyugyugyugyugugyugyugygyugyugyugyfuygyufguydiofhsodjfirfjgiojifohsdovhdsu euofhruhfushf ahudhushguihdhfdihggrshdfghidhdggdhjdghigdfhdfghgrfgdhgrihg igu hgu gr gey88whfioewhfioehfioewhfo")
         newsArticleView.present(self, animated: true)
     }
     

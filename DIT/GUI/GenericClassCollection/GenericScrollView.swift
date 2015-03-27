@@ -29,7 +29,6 @@ class GenericScrollView: UIScrollView, UIScrollViewDelegate{
         self.contentView = UIView(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.heightWithNavigationBar))
         self.addSubview(contentView)
         
-        
         // Set the content size be the same size as the content view. Adding content to contentView will increase contentSize.
         self.contentSize = contentView.frame.size
         
@@ -46,10 +45,12 @@ class GenericScrollView: UIScrollView, UIScrollViewDelegate{
     func addText(text: String, fontSize: Int) {
         var label: UILabel = calculateSizeOfLabel(text, fontSize: fontSize)
         
-        label.textColor = UIColor.blackColor()
+        label.textColor = UIColor.whiteColor()
+        
         self.contentView.addSubview(label)
         
-
+        
+        
         
     }
     
@@ -57,36 +58,32 @@ class GenericScrollView: UIScrollView, UIScrollViewDelegate{
     
     // Returns an appropriately sized label depending on contents of the label
     private func calculateSizeOfLabel(forText: String, fontSize: Int) -> UILabel {
-        // 30 words per line
-        var f: UIFont = UIFont(name: "Avenir Next", size: 25)!
-        println("Font size:", f.pointSize)
-        var characterCount = forText.characterCount()
         
-        var lines = characterCount / 25
-        
-        // The height the label should be
-        var height = lines * (fontSize * 3)
-        
-        // If the height of the label is greater than the height of the contentView, the contentView must 
-        // be increased
-        if((height as NSNumber).floatValue > (contentSize.height as NSNumber).floatValue) {
-            var difference = (height as NSNumber).doubleValue - (contentSize.height as NSNumber).doubleValue
-            
-            self.increaseContentSize(CGSize(width: 0, height: difference))
-        }
-        
-        // Convert height to CGFloat so we can construct new label size
-        var heightCGFloatValue = CGFloat((height as NSNumber).floatValue)
-        
-        var label = UILabel(frame: CGRectMake(0, 0, Screen.width, heightCGFloatValue))
+        // Set the labels size to be as big as CGFloat.max, then call
+        // sizeToFit() to scale appropriately with the text content
+        var label = UILabel(frame: CGRectMake(0, 0, Screen.width, CGFloat.max))
         
         
         // Set the text for the label
         label.text = forText
         label.font = font.getFont(.AvenirNext, fontStyle: .Regular, size: 25)
         
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
         label.numberOfLines = 0
-        println(label)
+        
+        label.sizeToFit()
+        
+        
+        var labelPosition = label.frame.origin.y
+        var labelHeight = label.frame.size.height
+        
+        // Check to see if the content view needs to be resized in order to add this view
+        if((labelPosition + labelHeight) > self.contentView.frame.height) {
+            println(labelHeight)
+            println(self.contentView.frame.height)
+            self.increaseContentSize(label)
+        }
+        
         return label
     }
     
@@ -97,9 +94,14 @@ class GenericScrollView: UIScrollView, UIScrollViewDelegate{
     // additions to the view. If a new view needs to be added to the scroll view
     // this method should be called so the contentSize is updated.
     // @param amount - The amount the contentSize should be increased by
-    private func increaseContentSize(amount: CGSize) {
+    private func increaseContentSize(view: UIView) {
+        
+        
+        // Calculate the difference in height between the view to be added and content view
+        var differenceInHeight = ((view.frame.origin.y + view.frame.size.height) - self.contentView.frame.size.height)
+        
         // The new height that needs to be added to the frame
-        var newHeight = self.contentView.frame.height + amount.height
+        var newHeight = self.contentView.frame.height + differenceInHeight
         
         // Increase the height of the content view to accomodate any subview that
         // has been added
@@ -107,19 +109,9 @@ class GenericScrollView: UIScrollView, UIScrollViewDelegate{
         
         // Now increase the height of contentSize to fit the new size of contentView
         self.contentSize = self.contentView.frame.size
-        
-        println(contentSize)
-        println(contentView)
     }
 
 }
 
-
-extension String {
-    
-    func characterCount() -> Int {
-        return countElements(self)
-    }
-}
 
 
