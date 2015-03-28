@@ -70,8 +70,8 @@ class ContentIcon: UIView {
         self.iconButton.frame = CGRect(
             x: 0,
             y: 0,
-            width: 66,
-            height: 66)
+            width: 90,
+            height: 90)
         
         
         

@@ -22,6 +22,7 @@
 		180F833B1ABE0BF100037DDE /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F833A1ABE0BF100037DDE /* NewsArticleView.swift */; };
 		182C72571AB48FC5002CD338 /* ParrallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182C72561AB48FC5002CD338 /* ParrallaxEffect.swift */; };
 		183EC2961AC212CD00E168F0 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EC2951AC212CD00E168F0 /* CourseViewController.swift */; };
+		184447531AC6370D002D68D9 /* ContactInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184447521AC6370D002D68D9 /* ContactInformationView.swift */; };
 		1849A5AB1ABF1CF300529D98 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849A5AA1ABF1CF300529D98 /* VisualEffectView.swift */; };
 		1849A5AE1ABF41E900529D98 /* NewsArticleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849A5AD1ABF41E900529D98 /* NewsArticleCollectionViewController.swift */; };
 		184F74931AC37A44001CF6C6 /* GenericScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F74921AC37A44001CF6C6 /* GenericScrollView.swift */; };
@@ -72,6 +73,7 @@
 		180F833A1ABE0BF100037DDE /* NewsArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsArticleView.swift; path = DIT/GUI/NewsArticleView/NewsArticleView.swift; sourceTree = "<group>"; };
 		182C72561AB48FC5002CD338 /* ParrallaxEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParrallaxEffect.swift; path = GUI/ParrallaxView/ParrallaxEffect.swift; sourceTree = "<group>"; };
 		183EC2951AC212CD00E168F0 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseViewController.swift; path = GUI/CourseViewController.swift; sourceTree = "<group>"; };
+		184447521AC6370D002D68D9 /* ContactInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactInformationView.swift; path = GUI/ContactInformationView.swift; sourceTree = "<group>"; };
 		1849A5AA1ABF1CF300529D98 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualEffectView.swift; path = DIT/GUI/VisualEffectView/VisualEffectView.swift; sourceTree = "<group>"; };
 		1849A5AD1ABF41E900529D98 /* NewsArticleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsArticleCollectionViewController.swift; path = DIT/GUI/NewsArticleView/NewsArticleCollectionViewController.swift; sourceTree = "<group>"; };
 		184F74921AC37A44001CF6C6 /* GenericScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericScrollView.swift; path = GUI/GenericClassCollection/GenericScrollView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				180F833F1ABE1F4800037DDE /* Generic Class Collection */,
 				180C60C71AB366F4009B967E /* HomeScreenViewController.swift */,
 				188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */,
+				184447521AC6370D002D68D9 /* ContactInformationView.swift */,
 				185AC5221AC18842009099C3 /* Courses */,
 				18B3B2981AB64543006FD38A /* Colour.swift */,
 				180C60EB1AB368D1009B967E /* Screen.swift */,
@@ -318,6 +321,7 @@
 				TargetAttributes = {
 					180C60BF1AB366F4009B967E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = N9HC9H544M;
 					};
 					180C60D41AB366F4009B967E = {
 						CreatedOnToolsVersion = 6.2;
@@ -391,6 +395,7 @@
 				182C72571AB48FC5002CD338 /* ParrallaxEffect.swift in Sources */,
 				187EA9881AB5D1B900C64488 /* ContentView.swift in Sources */,
 				180C60EE1AB36AD6009B967E /* Location.swift in Sources */,
+				184447531AC6370D002D68D9 /* ContactInformationView.swift in Sources */,
 				180C60C61AB366F4009B967E /* AppDelegate.swift in Sources */,
 				180C60EC1AB368D1009B967E /* Screen.swift in Sources */,
 				184F74931AC37A44001CF6C6 /* GenericScrollView.swift in Sources */,
@@ -520,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DIT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -531,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DIT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

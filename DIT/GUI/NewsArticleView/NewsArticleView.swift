@@ -12,7 +12,7 @@ import UIKit
 // - News Title
 // - News Article
 // - News Image (Used as the background for the story)
-class NewsArticleView: GenericContentView {
+class NewsArticleView: GenericContentView, UIScrollViewDelegate {
     
     var articleTextView: GenericTextView!
     var title: UILabel!
@@ -25,6 +25,7 @@ class NewsArticleView: GenericContentView {
         
         
         scrollView = GenericScrollView(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.heightWithNavigationBar))
+        self.scrollView.delegate = self
         self.addSubview(scrollView)
         
         // Set up the textview for the article
@@ -45,9 +46,6 @@ class NewsArticleView: GenericContentView {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
     
     
     

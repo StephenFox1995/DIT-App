@@ -89,7 +89,7 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
     // MARK: ContentViewDelegate
     func contentViewHasAppeared(appeared: Bool) {
         
-        var rightBarButton = GenericBarButtonItem(imageName: "NewsTest3")
+        var rightBarButton = GenericBarButtonItem(imageName: "DownArrow")
         rightBarButton.addAction(Selector("dismissContentView"), target: self)
         
         self.navigationItem.rightBarButtonItem = rightBarButton
@@ -114,7 +114,7 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
         newsArticleView.delegate = self
         
         // Set the article image
-        newsArticleView.setArticleBackgroundImage("NewsTest2")
+        newsArticleView.setArticleBackgroundImage("NewsTest8")
         
         
         // Set the article title
@@ -122,7 +122,7 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
         
         
         // Set the new title image
-        newsArticleView.setArticleTitleImage("NewsTest2")
+        newsArticleView.setArticleTitleImage("NewsTest8")
         
         // Set the article text
         newsArticleView.addTextForArticle("Gavin Fleming’s squad had a tough route to the final, with an open draw for all rounds.  The team faced all away ties which saw them beat Colaiste Ide, IT Blanchardstown, Limerick IT (Tipperary) and Athlone IT on their way to the final where they faced the much fancied IT Carlow. Carlow looked the more impressive side early on and took the lead on 20 minutes but failed to press home their advantage.  They paid the price close to half time when Michael Christian leveled for DIT with a smart finish after Carlow keeper Killian Fitzpatrick saved Darragh Maguire’s initial effort.")

@@ -8,22 +8,25 @@
 
 import UIKit
 
+
 // A ScrollView class which automatically sizes, when content is added.
 // Currently supports adding images and text.
 
-class GenericScrollView: UIScrollView, UIScrollViewDelegate{
+class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
 
     var contentView: UIView!
     var yPositions: [CGFloat] = []
     var labels: [UILabel] = []
     var images: [UIImageView] = []
     var font: Font = Font()
+    var gesture: UILongPressGestureRecognizer!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.setupLongPressGestureRecognizer()
+        
         // Set up scroll view
-        self.delegate = self
         self.backgroundColor = UIColor.clearColor()
         self.scrollEnabled = true
 
@@ -47,6 +50,21 @@ class GenericScrollView: UIScrollView, UIScrollViewDelegate{
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    func userHasTouchedScrollView() {
+        if(self.contentOffset.y == 0) {
+            println("Should move view")
+        }
+    }
+    
+    
+    func setupLongPressGestureRecognizer() {
+        self.gesture = UILongPressGestureRecognizer(target: self, action: Selector("userHasTouchedScrollView"))
+        self.gesture.minimumPressDuration = 0.2
+        gesture.delegate = self
+        self.addGestureRecognizer(gesture)
+
+    }
     
     
     // Adds text to the scroll view using a UILabel.

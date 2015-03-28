@@ -36,6 +36,7 @@ class GenericViewController: UIViewController {
             NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBar"), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage(named: "ShadowImage")
         self.navigationController?.navigationBar.translucent = false
         
         

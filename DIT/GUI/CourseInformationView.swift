@@ -20,73 +20,30 @@ import UIKit
 class CourseInformationView: GenericContentView {
     
     
-    var _font: Font = Font()
+
+    var courseInformationFont = Font()
+    var courseNameFont = Font()
+    var courseCodefont = Font()
+    var scrollView: GenericScrollView!
     
-    var courseCode: HeaderInformationLabel!
-    var courseName: HeaderInformationLabel!
-    var courseDepartment: CourseInformationLabel!
-    var courseLocation: CourseInformationLabel!
-    var courseCapacity: CourseInformationLabel!
-    var courseEmail: CourseInformationLabel!
-    var courseDescription: GenericTextView!
-    
-    // Hold arrays of the label objects so
-    // we can set common attributes to them.
-    var headerInformation: [HeaderInformationLabel]  = []
-    var courseInformation: [CourseInformationLabel] = []
+//    var courseCode: HeaderInformationLabel!
+//    var courseName: HeaderInformationLabel!
+//    var courseDepartment: CourseInformationLabel!
+//    var courseLocation: CourseInformationLabel!
+//    var courseCapacity: CourseInformationLabel!
+//    var courseEmail: CourseInformationLabel!
+//    var courseDescription: GenericTextView!
+
     
     override init() {
         super.init()
         
+        self.courseCodefont.getFont(.AvenirNext, fontStyle: .Regular, size: 30)
+        self.courseNameFont.getFont(.AvenirNext, fontStyle: .Light, size: 20)
+        self.courseInformationFont.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
+        scrollView = GenericScrollView(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.heightWithNavigationBar))
         
-        // Set up content for this view
-        // Header Information
-        self.courseCode = HeaderInformationLabel(frame: CGRect(x: 0, y: 20, width: Screen.width, height: 25))
-        self.courseCode.font = _font.getFont(.AvenirNext, fontStyle: .Regular, size: 30)
-        self.courseName = HeaderInformationLabel(frame: CGRect(x: 0, y: 50, width: Screen.width, height: 25))
-        
-
-        // Add to array so we can add to subview
-        self.headerInformation.append(self.courseCode)
-        self.headerInformation.append(self.courseName)
-        
-        
-        // Add to subview and animate
-        for label in headerInformation {
-            self.addSubview(label)
-            self.animateIntoView(label, duration: 0.8, delay: 0.0)
-        }
-        
-        
-        // Course information labels
-        self.courseDepartment = CourseInformationLabel(frame: CGRect(x: 10, y: 90, width: Screen.width, height: 20))
-        self.courseLocation = CourseInformationLabel(frame: CGRect(x: 10, y: 110, width: Screen.width, height: 20))
-        self.courseCapacity = CourseInformationLabel(frame: CGRect(x: 10, y: 130 , width: Screen.width, height: 20))
-        self.courseEmail = CourseInformationLabel(frame: CGRect(x: 10, y: 150, width: Screen.width, height: 20))
-        
-        
-        
-        // Add to array so we can add to subview
-        self.courseInformation.append(self.courseDepartment)
-        self.courseInformation.append(self.courseLocation)
-        self.courseInformation.append(self.courseCapacity)
-        self.courseInformation.append(self.courseEmail)
-        
-        
-        // Add to subviews
-        for label in courseInformation {
-            self.addSubview(label)
-            self.animateIntoView(label, duration: 1.0, delay: 0.2)
-        }
-        
-        
-        
-        // Add course description to view
-        self.courseDescription = GenericTextView(frame: CGRect(x: 0, y: 200, width: Screen.width, height: Screen.halfHeight))
-        self.courseDescription.font = font.getFont(.AvenirNext, fontStyle: .Light, size: 20)
-        self.addSubview(courseDescription)
-        
-        self.animateIntoView(courseDescription, duration: 1.0, delay: 0.2)
+        self.addSubview(scrollView)
         
     }
 
@@ -100,34 +57,34 @@ class CourseInformationView: GenericContentView {
     // MARK: Methods for setting content of view
     
     func setCode(code: String) {
-        self.courseCode.text = code
+        self.scrollView.addText(code, font: courseCodefont)
     }
     
     func setName(name: String) {
-        self.courseName.text = name
+        self.scrollView.addText(name, font: courseNameFont)
     }
     
     
     func setDepartment(department: String) {
-        self.courseDepartment.text = department
+        self.scrollView.addText(department, font: courseInformationFont)
     }
     
     func setLocation(location: String) {
-        self.courseLocation.text = location
+        self.scrollView.addText(location, font: courseInformationFont)
     }
     
     func setCapacity(capacity: String) {
-        self.courseCapacity.text = capacity
+        self.scrollView.addText(capacity, font: courseInformationFont)
     }
     
     
     func setEmail(email: String) {
-        self.courseEmail.text = email
+        self.scrollView.addText(email, font: courseInformationFont)
     }
     
     
     func setDescription(description: String) {
-        self.courseDescription.text = description
+        self.scrollView.addText(description, font: courseInformationFont)
     }
     
     
@@ -143,7 +100,7 @@ class CourseInformationView: GenericContentView {
         UIView.animateWithDuration(duration,
             delay: delay,
             options: UIViewAnimationOptions.CurveEaseIn,
-            animations: { view.alpha = 1.0},
+            animations: { self.scrollView.alpha = 1.0},
             completion: nil)
     }
     
@@ -153,49 +110,5 @@ class CourseInformationView: GenericContentView {
 
 
 
-// Class for header information
-class HeaderInformationLabel: UILabel {
-    
-    var labelfont: Font = Font()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.textAlignment = .Center
-        self.textColor = UIColor.whiteColor()
-        self.font = labelfont.getFont(.AvenirNext, fontStyle: .Light, size: 20)
-        self.backgroundColor = UIColor.clearColor()
-        
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
-
-
-
-
-
-
-// Class for course information
-class CourseInformationLabel: UILabel {
-    
-    var labelFont: Font = Font()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.textColor = UIColor.whiteColor()
-        self.font = labelFont.getFont(.AvenirNext, fontStyle: .Regular, size: 18)
-        self.backgroundColor = UIColor.clearColor()
-    }
-
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 
 

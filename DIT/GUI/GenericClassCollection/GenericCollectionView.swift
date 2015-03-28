@@ -22,7 +22,7 @@ class GenericCollectionView: UICollectionView {
         flowLayout.itemSize = CGSize(width: Screen.width, height: 181)
         flowLayout.scrollDirection = .Vertical
         
-        super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height), collectionViewLayout: flowLayout)
+        super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.heightWithNavigationBar), collectionViewLayout: flowLayout)
         
         self.backgroundColor = UIColor.clearColor()
         

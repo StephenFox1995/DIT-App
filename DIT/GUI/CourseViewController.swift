@@ -24,7 +24,7 @@ class CourseViewController: GenericViewController, UITableViewDelegate, UITableV
         self.navigationItem.title = "COURSES"
         
         // Set up the tableView
-        tableView = GenericTableView(frame: CGRectMake(0, 0, Screen.width, Screen.height), style: .Plain)
+        tableView = GenericTableView(frame: CGRectMake(0, 0, Screen.width, Screen.heightWithNavigationBar), style: .Plain)
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         self.tableView.delegate = self
         self.tableView.dataSource = self
