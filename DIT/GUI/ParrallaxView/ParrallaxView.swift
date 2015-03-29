@@ -69,7 +69,7 @@ class ParrallaxView: UIView {
         // Get the current campus the user is situated at
         currentCampus = location!.getCurrentCampus()
         
-        self.addImageToView(forLocation: currentCampus!)
+        //self.addImageToView(forLocation: currentCampus!)
     }
     
     

@@ -116,7 +116,7 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
     
     
     
-    // Loads an image from a url and adds it to the scrol view
+    // Loads an image from a url and adds it to the scroll view
     func addImageWithURL(url: NSURL) {
         self.addImage(GenericImageView.loadImage(from: url))
     }

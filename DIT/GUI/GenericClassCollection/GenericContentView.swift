@@ -9,20 +9,23 @@
 import UIKit
 
 
+@objc
 protocol GenericContentViewDelegate {
     func contentViewHasAppeared(appeared: Bool)
-    func dismissContentView()
+    optional func dismissContentView()
 }
 
 
 
 // Provides a view which has
 // - background image/ with blur
-class GenericContentView: UIView {
+class GenericContentView: UIView, GenericContentViewDelegate {
 
     var visualEffectView: VisualEffectView?
     var imageForBackground: UIImageView?
     var font: Font = Font()
+    
+    var inViewHierarchy: Bool = false
     
     
     var delegate: GenericContentViewDelegate?
@@ -46,6 +49,11 @@ class GenericContentView: UIView {
     }
     
     
+    func contentViewHasAppeared(appeared: Bool) {
+        self.inViewHierarchy = true
+    }
+    
+    
     
     // Sets the background image which will be 
     // used as a visual effect
@@ -60,11 +68,20 @@ class GenericContentView: UIView {
     // from a URL which os used as the visual effect.
     // @param url - URL of the image to use
     func setBackgroundImageWithURl(url: NSURL) {
-        var data = NSData(contentsOfURL: url)
         
-        var image = UIImage(data: data!)
+        var URLData: NSData?
+        var backgroundImage: UIImage?
         
-        self.visualEffectView?.addBackgroundImage(image!)
+        // Check to see if any data came back from the 
+        // URL request.
+        if let data = NSData(contentsOfURL: url) {
+            URLData = data
+            backgroundImage = UIImage(data: URLData!)
+        } else {
+            backgroundImage = UIImage()
+        }
+        
+        self.visualEffectView?.addBackgroundImage(backgroundImage!)
     }
     
     
