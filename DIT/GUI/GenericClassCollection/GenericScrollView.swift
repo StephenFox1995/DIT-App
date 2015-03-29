@@ -20,6 +20,7 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
     var images: [UIImageView] = []
     var font: Font = Font()
     var gesture: UILongPressGestureRecognizer!
+    var contentSpacing: Double?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,19 +73,59 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
     // - Its position is determined on any other content that is
     // currently in the scrolllView. If theres content it will be added
     // beneath that content.
-    func addText(text: String, font: Font) {
+    // @param text - The text to be added to the scroll view
+    // @param font - The font for the text
+    // @param textAlignment - The aligment of the text within its view
+    // 
+    // @param spacing - Spacing allows you to set how much space should be left, between
+    // this label and anything that may come after it, spacing cannot be a negative value,
+    // if spacing is a negative number it will be set to 0.
+    func addText(text: String, font: Font, textAlignment: NSTextAlignment, spacing: Double) {
+        
+        // Set up the spacing for this view
+        self.setupContentSpacing(spacing)
         
         var label: UILabel = calculateSizeOfLabel(text, font: font)
         
         label.textColor = UIColor.whiteColor()
-        
+        label.textAlignment = textAlignment
+       
         self.contentView.addSubview(label)
     }
     
     
     
-    func addImage(image: String) {
-        var image = UIImage(named: image)
+    // Sets a spacing value between objects
+    func setupContentSpacing(spacing: Double) {
+        if( spacing < 0) {
+            self.contentSpacing = 0
+        } else {
+            self.contentSpacing = spacing
+        }
+    }
+    
+    
+    
+    
+    // Adds extra height to a view, to give the effect that it is spaced
+    // Note: This method will only add space vertically
+    func addSpacingToView() {
+        yPositions[yPositions.endIndex - 1] + CGFloat(self.contentSpacing!)
+    }
+    
+    
+    
+    
+    // Loads an image from a url and adds it to the scrol view
+    func addImageWithURL(url: NSURL) {
+        self.addImage(GenericImageView.loadImage(from: url))
+    }
+    
+    
+    
+    
+    // Adds an image to the scroll View.
+    func addImage(image: UIImage) {
         var imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 323, height: 181))
         
         imageView.image = image
@@ -113,7 +154,7 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
         
         // Set the labels size to be as big as CGFloat.max, then call
         // sizeToFit() to scale appropriately with the text content
-        var label = UILabel(frame: CGRectMake(0, 0, Screen.width, CGFloat.max))
+        var label = UILabel(frame: CGRectMake(0, 0, self.contentView.frame.width, CGFloat.max))
 
         // Set the text for the label
         label.text = forText
@@ -124,9 +165,17 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
         
         label.sizeToFit()
         
+        // Add any extra space(height to this object)
+        self.addSpacingToView()
+        
+        
         // Change the labels vertical positioning to wherever the next available
         // position is.
         label.frame.origin.y = nextAvailablePosition()
+        
+        
+        // Set the width to be the same size as contentSize
+        self.setToFullWidth(label)
         
         
         var labelPosition = label.frame.origin.y
@@ -142,6 +191,15 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
         self.recordPostition(labelPosition + labelHeight)
         
         return label
+    }
+    
+    
+    
+    
+    // Sets the width of the view to fit exactly horizontally across the contentSize
+    // property
+    private func setToFullWidth(view: UIView) {
+        view.frame.size.width = self.contentSize.width
     }
     
     

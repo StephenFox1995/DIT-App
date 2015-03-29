@@ -58,7 +58,7 @@ class NewsArticleView: GenericContentView, UIScrollViewDelegate {
         var articleFont = Font()
         articleFont.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
         
-        self.scrollView.addText(article, font: articleFont)
+        self.scrollView.addText(article, font: articleFont, textAlignment: .Left, spacing: 30)
     }
     
     
@@ -70,18 +70,21 @@ class NewsArticleView: GenericContentView, UIScrollViewDelegate {
         var titleFont = Font()
         titleFont.getFont(.AvenirNext, fontStyle: .Bold, size: 20)
         
-        self.scrollView.addText(title, font: titleFont)
+        self.scrollView.addText(title, font: titleFont, textAlignment: .Left, spacing: 40)
     }
     
     
     func addImageToArticle(imagename: String) {
-        self.scrollView.addImage(imagename)
+        var url = NSURL(string: "http://www.dit.ie/media/newsimages/2015/homepageDITFashionShow2015.jpg")
+        self.scrollView.addImageWithURL(url!)
     }
     
     
     
+    
     func setArticleTitleImage(name: String) {
-        self.scrollView.addImage(name)
+        var url = NSURL(string: "http://www.dit.ie/media/newsimages/2015/homepageDITFashionShow2015.jpg")
+        self.scrollView.addImageWithURL(url!)
     }
     
     
@@ -89,7 +92,8 @@ class NewsArticleView: GenericContentView, UIScrollViewDelegate {
     // Sets the background image for the article story
     // @param name - Name of the image to set
     func setArticleBackgroundImage(name: String) {
-        super.setBackgroundImage(name)
+        var url = NSURL(string: "http://www.dit.ie/media/newsimages/2015/homepageDITFashionShow2015.jpg")
+        super.setBackgroundImageWithURl(url!)
     }
     
     

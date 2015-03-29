@@ -35,6 +35,7 @@
 		187EA9881AB5D1B900C64488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EA9871AB5D1B900C64488 /* ContentView.swift */; };
 		188B00451AB9BF0A00A1C2AC /* MapCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */; };
 		188B36A61AC4D19D00AD5ED9 /* GenericBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B36A51AC4D19D00AD5ED9 /* GenericBarButtonItem.swift */; };
+		188BBAB51AC84C4C00C69066 /* GenericImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BBAB41AC84C4C00C69066 /* GenericImageView.swift */; };
 		189CE1381AC1C140006E0203 /* GenericContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CE1371AC1C140006E0203 /* GenericContentView.swift */; };
 		189CE13A1AC1F980006E0203 /* CourseInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CE1391AC1F980006E0203 /* CourseInformationView.swift */; };
 		18B3B2991AB64543006FD38A /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3B2981AB64543006FD38A /* Colour.swift */; };
@@ -86,6 +87,7 @@
 		187EA9871AB5D1B900C64488 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = GUI/ContentView/ContentView.swift; sourceTree = "<group>"; };
 		188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCollectionViewController.swift; path = GUI/MapCollectionViewController.swift; sourceTree = "<group>"; };
 		188B36A51AC4D19D00AD5ED9 /* GenericBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericBarButtonItem.swift; path = "../../../DIT-Timetable/DIT Timetable/GenericBarButtonItem.swift"; sourceTree = "<group>"; };
+		188BBAB41AC84C4C00C69066 /* GenericImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericImageView.swift; path = GUI/GenericClassCollection/GenericImageView.swift; sourceTree = "<group>"; };
 		189CE1371AC1C140006E0203 /* GenericContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericContentView.swift; path = GUI/GenericClassCollection/GenericContentView.swift; sourceTree = "<group>"; };
 		189CE1391AC1F980006E0203 /* CourseInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseInformationView.swift; path = GUI/CourseInformationView.swift; sourceTree = "<group>"; };
 		18B3B2981AB64543006FD38A /* Colour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colour.swift; path = GUI/Colour.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				185AC5121AC18192009099C3 /* GenericTableView.swift */,
 				185AC5191AC181CC009099C3 /* GenericViewController.swift */,
 				189CE1371AC1C140006E0203 /* GenericContentView.swift */,
+				188BBAB41AC84C4C00C69066 /* GenericImageView.swift */,
 				184F74921AC37A44001CF6C6 /* GenericScrollView.swift */,
 				188B36A51AC4D19D00AD5ED9 /* GenericBarButtonItem.swift */,
 			);
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188BBAB51AC84C4C00C69066 /* GenericImageView.swift in Sources */,
 				180C60E61AB3675F009B967E /* BackgroundView.swift in Sources */,
 				180F833B1ABE0BF100037DDE /* NewsArticleView.swift in Sources */,
 				18BD41EE1ABCC05F00464759 /* ContentIcon.swift in Sources */,

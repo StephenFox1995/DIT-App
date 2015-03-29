@@ -26,13 +26,6 @@ class CourseInformationView: GenericContentView {
     var courseCodefont = Font()
     var scrollView: GenericScrollView!
     
-//    var courseCode: HeaderInformationLabel!
-//    var courseName: HeaderInformationLabel!
-//    var courseDepartment: CourseInformationLabel!
-//    var courseLocation: CourseInformationLabel!
-//    var courseCapacity: CourseInformationLabel!
-//    var courseEmail: CourseInformationLabel!
-//    var courseDescription: GenericTextView!
 
     
     override init() {
@@ -55,36 +48,35 @@ class CourseInformationView: GenericContentView {
     
     
     // MARK: Methods for setting content of view
-    
     func setCode(code: String) {
-        self.scrollView.addText(code, font: courseCodefont)
+        self.scrollView.addText(code, font: courseCodefont, textAlignment: .Center, spacing: 5)
     }
     
     func setName(name: String) {
-        self.scrollView.addText(name, font: courseNameFont)
+        self.scrollView.addText(name, font: courseNameFont, textAlignment: .Center, spacing: 20)
     }
     
     
     func setDepartment(department: String) {
-        self.scrollView.addText(department, font: courseInformationFont)
+        self.scrollView.addText(department, font: courseInformationFont, textAlignment: .Left, spacing: 0)
     }
     
     func setLocation(location: String) {
-        self.scrollView.addText(location, font: courseInformationFont)
+        self.scrollView.addText(location, font: courseInformationFont, textAlignment: .Left, spacing: 0)
     }
     
     func setCapacity(capacity: String) {
-        self.scrollView.addText(capacity, font: courseInformationFont)
+        self.scrollView.addText(capacity, font: courseInformationFont, textAlignment: .Left, spacing: 0)
     }
     
     
     func setEmail(email: String) {
-        self.scrollView.addText(email, font: courseInformationFont)
+        self.scrollView.addText(email, font: courseInformationFont, textAlignment: .Left, spacing: 50)
     }
     
     
     func setDescription(description: String) {
-        self.scrollView.addText(description, font: courseInformationFont)
+        self.scrollView.addText(description, font: courseInformationFont, textAlignment: .Left, spacing: 0)
     }
     
     

@@ -16,8 +16,8 @@ enum ContentIconType {
     case Courses
     case News
     case Library
-    case Contact
-    case Timetable
+    case Contacts
+    case Timetables
 }
 
 
@@ -55,16 +55,17 @@ class ContentIcon: UIView {
         self.width = self.frame.size.width
         self.height = self.frame.size.height
         
+        
         self.iconType = iconType
         
-        
         // Setup the button
-        self.setupIcon()
+        self.setupIcon(iconType)
     }
     
     
-    
-    private func setupIcon() {
+    // Setups up an button(image) and a title for an icon
+    // @param iconType - The type of icon to be set up
+    private func setupIcon(iconType:ContentIconType) {
         
         // Setup position of button frame
         self.iconButton.frame = CGRect(
@@ -109,10 +110,15 @@ class ContentIcon: UIView {
             self.iconTitle.text = "Library"
             break
             
-        case .Contact:
+        case .Contacts:
             self.iconButton.setImage(UIImage(named: "Contacts"), forState: .Normal)
             self.iconTitle.text = "Contacts"
             break
+            
+            
+        case .Timetables:
+            self.iconButton.setImage(UIImage(named: "Timetables"), forState: .Normal)
+            self.iconTitle.text = "Timetables"
             
             
         default:

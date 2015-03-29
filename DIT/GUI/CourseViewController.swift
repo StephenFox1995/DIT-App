@@ -79,7 +79,7 @@ class CourseViewController: GenericViewController, UITableViewDelegate, UITableV
         
         // Pass info about course
         courseInformationView.setCode("DT228")
-        courseInformationView.setName("Computer Science")
+        courseInformationView.setName("COMPUTER SCIENCE")
         courseInformationView.setDepartment("School of Computing")
         courseInformationView.setLocation("Kevin Street")
         courseInformationView.setCapacity("Capacity: 100")

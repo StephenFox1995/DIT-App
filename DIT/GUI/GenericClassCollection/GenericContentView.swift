@@ -16,7 +16,6 @@ protocol GenericContentViewDelegate {
 
 
 
-
 // Provides a view which has
 // - background image/ with blur
 class GenericContentView: UIView {
@@ -53,6 +52,19 @@ class GenericContentView: UIView {
     // @param name - Name of the image to set
     func setBackgroundImage(name: String) {
         self.visualEffectView?.addBackgroundImage(name)
+    }
+    
+    
+    
+    // Sets the background image specified from the
+    // from a URL which os used as the visual effect.
+    // @param url - URL of the image to use
+    func setBackgroundImageWithURl(url: NSURL) {
+        var data = NSData(contentsOfURL: url)
+        
+        var image = UIImage(data: data!)
+        
+        self.visualEffectView?.addBackgroundImage(image!)
     }
     
     
@@ -123,12 +135,10 @@ class GenericContentView: UIView {
             delay: 0.0,
             options: .CurveEaseOut,
             animations: { self.frame = CGRectMake(0, Screen.height, Screen.width, Screen.height) },
-            completion: { [unowned self] finished in
+            completion: { finished in
                 self.removeFromSuperview()
                 completion(true)
-        })
-        
-        
+            })
         
     }
 

@@ -118,20 +118,26 @@ class VisualEffectView: UIView {
     
     
     
+    // Adds a background image to the view
+    func addBackgroundImage(image: String) {
+        var backgroundImage = UIImage(named: image)
+        self.addBackgroundImage(backgroundImage!)
+    }
+    
     
     // Adds a background image for this view.
     // the background image will be covered by a blur effect
-    func addBackgroundImage(image: String) {
+    func addBackgroundImage(image: UIImage) {
         
         var backgroundImageView = UIImageView(frame: self.frame)
-        var backgroundImage = UIImage(named: image)
         
-        backgroundImageView.image = backgroundImage
+        backgroundImageView.image = image
         
         self.addSubview(backgroundImageView)
         
         // Send to the background
         self.sendSubviewToBack(backgroundImageView)
+
     }
     
     

@@ -57,8 +57,8 @@ class ContentView: UIView {
         icons.append(ContentIcon(iconType: .Courses, origin: CGPoint(x: 235, y: 90)))
         icons.append(ContentIcon(iconType: .News, origin: CGPoint(x: 40, y: 250)))
         icons.append(ContentIcon(iconType: .Library, origin: CGPoint(x: 235, y: 250)))
-        icons.append(ContentIcon(iconType: .Contact, origin: CGPoint(x: 40, y: 435)))
-        icons.append(ContentIcon(iconType: .Timetable, origin: CGPoint(x: 235, y: 435)))
+        icons.append(ContentIcon(iconType: .Contacts, origin: CGPoint(x: 40, y: 435)))
+        icons.append(ContentIcon(iconType: .Timetables, origin: CGPoint(x: 235, y: 435)))
         
         // Add icons to the view
         self.addIconsToView()
