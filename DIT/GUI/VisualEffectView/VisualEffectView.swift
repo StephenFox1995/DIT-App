@@ -30,6 +30,10 @@ class VisualEffectView: UIView {
     
     
     
+    // @param frame
+    // @param withBlur: Adds a blur effect
+    // @param withVibrancy: Adds a vibrancy effect
+    // @param style: e.g. Dark, Light or ExtraLight
     init(frame: CGRect, withBlur: Bool, withVibrancy: Bool, style: UIBlurEffectStyle) {
         super.init(frame: frame)
         
@@ -46,13 +50,12 @@ class VisualEffectView: UIView {
             // as it cannot be on added without a blur effect
             visualBlurEffectView?.contentView.addSubview(visualVibrancyEffectView!)
         }
+            
         // Blur on its own
         else if(withBlur && !withVibrancy) {
             self.addBlurEffect(style)
         }
     }
-    
-    
     
     
     
@@ -107,6 +110,9 @@ class VisualEffectView: UIView {
         }
     }
     
+    
+    
+    
     // Adds content to the blur view.
     // This view must have a visualBlurView for
     // any object to be added to it
@@ -118,11 +124,14 @@ class VisualEffectView: UIView {
     
     
     
+    
     // Adds a background image to the view
     func addBackgroundImage(image: String) {
         var backgroundImage = UIImage(named: image)
         self.addVisualEffectBackgroundImage(backgroundImage!)
     }
+    
+    
     
     
     // Adds a background image for this view.
@@ -135,7 +144,7 @@ class VisualEffectView: UIView {
         
         self.addSubview(backgroundImageView)
         
-        // Send to the background
+        // Send to the background so the visual effect is still overlayed
         self.sendSubviewToBack(backgroundImageView)
 
     }

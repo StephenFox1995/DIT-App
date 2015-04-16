@@ -76,16 +76,6 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
     
     
     
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        //var yOffset = ( (self.collectionView.contentOffset.y - self.cell!.frame.origin.y) / (cell!.imageView!.image!.size.height) * cell!.offsetSpeed)
-        
-        //cell!.initiateParrallaxEffect(CGPointMake(0, yOffset))
-        
-    }
-    
-    
-    
     // MARK: ContentViewDelegate
     func contentViewHasAppeared(appeared: Bool) {
         

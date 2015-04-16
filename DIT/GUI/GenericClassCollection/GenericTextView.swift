@@ -24,9 +24,6 @@ class GenericTextView: UITextView {
         self.editable = false
     }
     
-    override init(frame: CGRect, textContainer: NSTextContainer?) {
-        super.init(frame: frame, textContainer: textContainer)
-    }
     
     
     // Sets the text for this view
