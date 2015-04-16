@@ -59,6 +59,8 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
     }
     
     
+    
+    
     func setupLongPressGestureRecognizer() {
         self.gesture = UILongPressGestureRecognizer(target: self, action: Selector("userHasTouchedScrollView"))
         self.gesture.minimumPressDuration = 0.2
@@ -66,6 +68,9 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
         self.addGestureRecognizer(gesture)
 
     }
+    
+    
+    
     
     
     // Adds text to the scroll view using a UILabel.
@@ -92,6 +97,8 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
        
         self.contentView.addSubview(label)
     }
+    
+    
     
     
     
@@ -144,6 +151,7 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
         
         self.addSubview(imageView)
     }
+    
     
     
     
@@ -208,6 +216,8 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
     private func recordPostition(position: CGFloat) {
         yPositions.append(position)
     }
+    
+    
     
     
     // Tells the receiver where in the view it can be located, vertically.

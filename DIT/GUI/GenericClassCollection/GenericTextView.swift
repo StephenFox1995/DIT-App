@@ -14,8 +14,8 @@ class GenericTextView: UITextView {
     
     private var textViewFont: Font = Font()
     
-    convenience init(frame: CGRect) {
-        self.init()
+    init(frame: CGRect) {
+        super.init(frame: frame, textContainer: NSTextContainer())
         
         self.font = textViewFont.getFont(.AvenirNext, fontStyle: FontStyle.Regular, size: 20)
         self.textColor = UIColor.whiteColor()
