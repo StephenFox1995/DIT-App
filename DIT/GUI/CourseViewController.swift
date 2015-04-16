@@ -56,7 +56,7 @@ class CourseViewController: GenericViewController, UITableViewDelegate, UITableV
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.font = cellFont.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
         cell.textLabel?.textColor = UIColor.whiteColor()

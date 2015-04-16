@@ -82,7 +82,7 @@ class NewsArticleView: GenericContentView, UIScrollViewDelegate {
     
     
     
-    func setArticleTitleImage(name: String) {
+    func setupArticleTitleImage(name: String) {
         var url = NSURL(string: "http://www.dit.ie/media/newsimages/2015/homepageDITFashionShow2015.jpg")
         self.scrollView.addImageWithURL(url!)
     }

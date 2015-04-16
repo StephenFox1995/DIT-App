@@ -27,7 +27,6 @@ class GenericImageView: UIImageView {
         } else {
             return UIImage()
         }
-        
     }
 
 }

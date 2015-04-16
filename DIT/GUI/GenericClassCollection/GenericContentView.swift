@@ -31,7 +31,7 @@ class GenericContentView: UIView, GenericContentViewDelegate {
     var delegate: GenericContentViewDelegate?
     
     
-    override init() {
+    init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height - navigationBarHeight))
         
         self.backgroundColor = UIColor.clearColor()
@@ -81,7 +81,8 @@ class GenericContentView: UIView, GenericContentViewDelegate {
             backgroundImage = UIImage()
         }
         
-        self.visualEffectView?.addBackgroundImage(backgroundImage!)
+
+        self.visualEffectView?.addVisualEffectBackgroundImage(backgroundImage!)
     }
     
     

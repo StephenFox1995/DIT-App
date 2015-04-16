@@ -17,7 +17,7 @@ import UIKit
 // and a blue filter overlay.
 class GenericCollectionView: UICollectionView {
     
-    override init() {
+    init() {
         var flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: Screen.width, height: 181)
         flowLayout.scrollDirection = .Vertical

@@ -147,8 +147,6 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
     
     
     
-    
-    
     // Returns an appropriately sized label depending on contents of the label
     private func calculateSizeOfLabel(forText: String, font: Font) -> UILabel {
         
@@ -176,7 +174,7 @@ class GenericScrollView: UIScrollView, UIGestureRecognizerDelegate{
         
         // Set the width to be the same size as contentSize
         self.setToFullWidth(label)
-        
+
         
         var labelPosition = label.frame.origin.y
         var labelHeight = label.frame.size.height

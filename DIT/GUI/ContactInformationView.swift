@@ -11,10 +11,8 @@ import UIKit
 class ContactInformationView: UIView {
     
 
-    override init() {
-        super.init()
-        
-        
+    convenience init() {
+        self.init()
         var visualEffect = VisualEffectView(frame: self.frame, withBlur: true, withVibrancy: false, style: .Dark)
         self.frame = CGRectMake(0, 0, 300, 300)
         self.layer.cornerRadius = 8.0

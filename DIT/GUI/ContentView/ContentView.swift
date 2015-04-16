@@ -33,11 +33,11 @@ class ContentView: UIView {
     // Collection of all icons for this view
     var icons: [ContentIcon] = []
     
-    var iconAmount: Int = 5
+    var iconAmount: Int = 6
     
 
     
-    override init() {
+    init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         
         // Create all the buttons for this view
@@ -48,6 +48,8 @@ class ContentView: UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    
     
     
     private func createIcons() {
@@ -64,9 +66,10 @@ class ContentView: UIView {
         self.addIconsToView()
         
         // Add actions to all the icon buttons
-        addIconActions()
+        self.addIconActions()
         
     }
+    
     
     
     
@@ -76,6 +79,8 @@ class ContentView: UIView {
             self.addSubview(icons[i])
         }
     }
+    
+    
     
     
     // Add all the actions for the button property on the
@@ -88,7 +93,8 @@ class ContentView: UIView {
             "displayCoursesView",
             "displayNewsView",
             "displayLibraryView",
-            "displayLibrary" ]
+            "displayLibrary",
+            "displayTimetableView" ]
         
         
         for(var i: Int = 0; i < iconAmount; i++) {
@@ -123,6 +129,12 @@ class ContentView: UIView {
     
     // Display Contacts View
     func displayContactsView() {
+    }
+    
+    
+    // Display Timetable View
+    func displayTimetableView() {
+        
     }
     
 }

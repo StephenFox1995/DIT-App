@@ -14,15 +14,14 @@ class GenericTextView: UITextView {
     
     private var textViewFont: Font = Font()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    convenience init(frame: CGRect) {
+        self.init()
         
         self.font = textViewFont.getFont(.AvenirNext, fontStyle: FontStyle.Regular, size: 20)
         self.textColor = UIColor.whiteColor()
         self.backgroundColor = UIColor.clearColor()
         self.scrollEnabled = true
         self.editable = false
-        
     }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {

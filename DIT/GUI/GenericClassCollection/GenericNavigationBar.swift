@@ -12,7 +12,7 @@ import UIKit
 // the application
 class GenericNavigationBar: UINavigationBar {
     
-    override init() {
+    init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: 80))
         
         

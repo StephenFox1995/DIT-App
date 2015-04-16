@@ -38,7 +38,7 @@ class VisualEffectView: UIView {
         
         
         // Both blur and vibrancy
-        if(withBlur & withVibrancy) {
+        if(withBlur && withVibrancy) {
             self.addBlurEffect(style)
             self.addVibrancyEffect()
             
@@ -47,7 +47,7 @@ class VisualEffectView: UIView {
             visualBlurEffectView?.contentView.addSubview(visualVibrancyEffectView!)
         }
         // Blur on its own
-        else if(withBlur & !withVibrancy) {
+        else if(withBlur && !withVibrancy) {
             self.addBlurEffect(style)
         }
     }
@@ -121,13 +121,13 @@ class VisualEffectView: UIView {
     // Adds a background image to the view
     func addBackgroundImage(image: String) {
         var backgroundImage = UIImage(named: image)
-        self.addBackgroundImage(backgroundImage!)
+        self.addVisualEffectBackgroundImage(backgroundImage!)
     }
     
     
     // Adds a background image for this view.
     // the background image will be covered by a blur effect
-    func addBackgroundImage(image: UIImage) {
+    func addVisualEffectBackgroundImage(image: UIImage) {
         
         var backgroundImageView = UIImageView(frame: self.frame)
         

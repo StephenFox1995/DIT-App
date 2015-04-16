@@ -41,7 +41,6 @@ class ContentIcon: UIView {
     
     
     
-    
     // @param iconType: Type of icon to be displayed
     // @param point: Coordinates of the ContentViewIcon
     init(iconType: ContentIconType, origin: CGPoint) {
@@ -79,14 +78,14 @@ class ContentIcon: UIView {
         // Setup positon of title frame
         self.iconTitle.frame = CGRect(
             x: 0,
-            y: 70,
-            width: width!,
+            y: 80,
+            width: 90,
             height: 20)
         
         // Set titles attributes
         self.iconTitle.textColor = UIColor.whiteColor()
         self.iconTitle.font = font.getFont(.AvenirNext, fontStyle: .Regular, size: 20)
-        
+        self.iconTitle.textAlignment = .Center
         
         switch(self.iconType!) {
             

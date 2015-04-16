@@ -60,7 +60,7 @@ class MapCollectionViewController: GenericViewController, UICollectionViewDelega
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as GenericCollectionViewCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! GenericCollectionViewCell
         
         cell.setCellImage(campusImages[indexPath.row])
         cell.setCellTitle(campusNames[indexPath.row])

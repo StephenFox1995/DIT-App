@@ -36,7 +36,7 @@ class ParrallaxView: UIView {
     
     // Constructs a view which is full screen size
     // Sets up a parrallax effect
-    override init() {
+    init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Screen.width, height: Screen.height))
         
         self.location = Location()

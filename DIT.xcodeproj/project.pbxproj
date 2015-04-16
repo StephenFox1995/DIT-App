@@ -34,7 +34,6 @@
 		185AC51D1AC181CC009099C3 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AC5191AC181CC009099C3 /* GenericViewController.swift */; };
 		187EA9881AB5D1B900C64488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EA9871AB5D1B900C64488 /* ContentView.swift */; };
 		188B00451AB9BF0A00A1C2AC /* MapCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */; };
-		188B36A61AC4D19D00AD5ED9 /* GenericBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B36A51AC4D19D00AD5ED9 /* GenericBarButtonItem.swift */; };
 		188BBAB51AC84C4C00C69066 /* GenericImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BBAB41AC84C4C00C69066 /* GenericImageView.swift */; };
 		189CE1381AC1C140006E0203 /* GenericContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CE1371AC1C140006E0203 /* GenericContentView.swift */; };
 		189CE13A1AC1F980006E0203 /* CourseInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CE1391AC1F980006E0203 /* CourseInformationView.swift */; };
@@ -42,6 +41,7 @@
 		18B976901AB3C84A000DE22D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B9768C1AB3C824000DE22D /* MapKit.framework */; };
 		18B976911AB3C852000DE22D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B9768E1AB3C830000DE22D /* CoreLocation.framework */; };
 		18BD41EE1ABCC05F00464759 /* ContentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD41ED1ABCC05F00464759 /* ContentIcon.swift */; };
+		18C05A991ADF33D7000E5FC1 /* GenericBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C05A981ADF33D7000E5FC1 /* GenericBarButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,6 @@
 		185AC5191AC181CC009099C3 /* GenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericViewController.swift; path = GUI/GenericClassCollection/GenericViewController.swift; sourceTree = "<group>"; };
 		187EA9871AB5D1B900C64488 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = GUI/ContentView/ContentView.swift; sourceTree = "<group>"; };
 		188B00441AB9BF0A00A1C2AC /* MapCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCollectionViewController.swift; path = GUI/MapCollectionViewController.swift; sourceTree = "<group>"; };
-		188B36A51AC4D19D00AD5ED9 /* GenericBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericBarButtonItem.swift; path = "../../../DIT-Timetable/DIT Timetable/GenericBarButtonItem.swift"; sourceTree = "<group>"; };
 		188BBAB41AC84C4C00C69066 /* GenericImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericImageView.swift; path = GUI/GenericClassCollection/GenericImageView.swift; sourceTree = "<group>"; };
 		189CE1371AC1C140006E0203 /* GenericContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericContentView.swift; path = GUI/GenericClassCollection/GenericContentView.swift; sourceTree = "<group>"; };
 		189CE1391AC1F980006E0203 /* CourseInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseInformationView.swift; path = GUI/CourseInformationView.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		18B9768C1AB3C824000DE22D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		18B9768E1AB3C830000DE22D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		18BD41ED1ABCC05F00464759 /* ContentIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentIcon.swift; path = GUI/ContentView/ContentIcon.swift; sourceTree = "<group>"; };
+		18C05A981ADF33D7000E5FC1 /* GenericBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericBarButtonItem.swift; path = GUI/GenericClassCollection/GenericBarButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +243,7 @@
 				189CE1371AC1C140006E0203 /* GenericContentView.swift */,
 				188BBAB41AC84C4C00C69066 /* GenericImageView.swift */,
 				184F74921AC37A44001CF6C6 /* GenericScrollView.swift */,
-				188B36A51AC4D19D00AD5ED9 /* GenericBarButtonItem.swift */,
+				18C05A981ADF33D7000E5FC1 /* GenericBarButtonItem.swift */,
 			);
 			name = "Generic Class Collection";
 			sourceTree = "<group>";
@@ -389,8 +389,8 @@
 				185AC5131AC18192009099C3 /* GenericTableView.swift in Sources */,
 				185AC51D1AC181CC009099C3 /* GenericViewController.swift in Sources */,
 				180C60C81AB366F4009B967E /* HomeScreenViewController.swift in Sources */,
-				188B36A61AC4D19D00AD5ED9 /* GenericBarButtonItem.swift in Sources */,
 				183EC2961AC212CD00E168F0 /* CourseViewController.swift in Sources */,
+				18C05A991ADF33D7000E5FC1 /* GenericBarButtonItem.swift in Sources */,
 				188B00451AB9BF0A00A1C2AC /* MapCollectionViewController.swift in Sources */,
 				1849A5AE1ABF41E900529D98 /* NewsArticleCollectionViewController.swift in Sources */,
 				185AC51B1AC181CC009099C3 /* GenericNavigationBar.swift in Sources */,

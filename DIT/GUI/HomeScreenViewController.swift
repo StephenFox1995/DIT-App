@@ -59,10 +59,7 @@ class HomeScreenViewController: GenericViewController, ContentViewDelegate{
         super.viewDidAppear(true)
     }
     
-    
-    
-    
-    
+
     
     
     // MARK: ContentView delegate implementation

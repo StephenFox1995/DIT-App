@@ -63,7 +63,7 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        cell = (collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as GenericCollectionViewCell)
+        cell = (collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! GenericCollectionViewCell)
         
         // Set the attributes of the collection view cell
         cell!.setCellImage(images[indexPath.row])
@@ -89,10 +89,10 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
     // MARK: ContentViewDelegate
     func contentViewHasAppeared(appeared: Bool) {
         
-        var rightBarButton = GenericBarButtonItem(imageName: "DownArrow")
-        rightBarButton.addAction(Selector("dismissContentView"), target: self)
+        //var rightBarButton = GenericBarButtonItem(imageName: "DownArrow")
+        //rightBarButton.addAction(Selector("dismissContentView"), target: self)
         
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        //self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
     
@@ -122,7 +122,7 @@ class NewsArticleCollectionViewController: GenericViewController, GenericContent
         
         
         // Set the new title image
-        newsArticleView.setArticleTitleImage("NewsTest8")
+        newsArticleView.setupArticleTitleImage("NewsTest8")
         
         // Set the article text
         newsArticleView.addTextForArticle("Gavin Fleming’s squad had a tough route to the final, with an open draw for all rounds.  The team faced all away ties which saw them beat Colaiste Ide, IT Blanchardstown, Limerick IT (Tipperary) and Athlone IT on their way to the final where they faced the much fancied IT Carlow. Carlow looked the more impressive side early on and took the lead on 20 minutes but failed to press home their advantage.  They paid the price close to half time when Michael Christian leveled for DIT with a smart finish after Carlow keeper Killian Fitzpatrick saved Darragh Maguire’s initial effort.")
